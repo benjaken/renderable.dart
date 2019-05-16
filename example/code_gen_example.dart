@@ -5,7 +5,7 @@ import 'package:code_gen/src/element/file_render_element.dart';
 
 main() {
   FileRenderElement(
-    filePath: 'example/code_gen_example.generated.dart',
+    filePath: 'example/generated/code_gen_example.generated.dart',
     renders: [
       ClassRenderElement(
         name: 'CodeGenExampleInterface1',
