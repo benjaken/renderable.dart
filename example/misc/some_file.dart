@@ -1,4 +1,4 @@
-class SomeFile {}
+class SomeFile<T, R> {}
 
 class SomeFile2 {}
 
