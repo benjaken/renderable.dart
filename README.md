@@ -1,22 +1,29 @@
-A library for Dart developers.
+# CodeGen
+A element-model-based Dart code generator
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
-
-## Usage
-
-A simple usage example:
+### Quick Start
+let's create a simple class named 'HelloWorld'.
 
 ```dart
 import 'package:code_gen/code_gen.dart';
 
-main() {
-  var awesome = new Awesome();
+void main() {
+  FileRenderElement(
+    filePath: 'helloWorld.dart',
+    renders: [
+      ClassRenderElement(
+        name: 'HelloWorld',
+      ),
+    ],
+  ).writeToFile();
 }
 ```
 
-## Features and bugs
+It will generates
+```dart
+// file: helloWorld.dart
 
-Please file feature requests and bugs at the [issue tracker][tracker].
-
-[tracker]: http://example.com/issues/replaceme
+class HelloWorld {
+  
+}
+```
