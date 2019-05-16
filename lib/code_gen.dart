@@ -1,8 +1,5 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
 library code_gen;
 
-export 'src/code_gen_base.dart';
+export 'src/element/class_render_element.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+export 'src/type/interface_render_type.dart';
