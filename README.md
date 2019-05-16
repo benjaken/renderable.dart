@@ -40,7 +40,7 @@ import 'package:code_gen/code_gen.dart';
 void main() {
   FileRenderElement(
     filePath: 'myHelloWorld.dart',
-    improts: [
+    imports: [
       ImportRenderElement(path: 'helloWorld.dart'),
     ],
     renders: [
