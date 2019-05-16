@@ -1,14 +1,20 @@
-abstract class CodeGenExampleInterface1 {}
 
-abstract class CodeGenExampleInterface2 {}
 
-abstract class CodeGenExampleInterface3 {}
+abstract class CodeGenExampleInterface1 {
+}
 
-class CodeGenExampleBase {}
+abstract class CodeGenExampleInterface2 {
+}
 
-class CodeGenExample extends CodeGenExampleBase
-    implements CodeGenExampleInterface1, CodeGenExampleInterface2, CodeGenExampleInterface3 {
-  dynamic basicField;
+abstract class CodeGenExampleInterface3 {
+}
 
-  int fieldWithModifier1 = 1;
+class CodeGenExampleBase {
+}
+
+class CodeGenExample extends CodeGenExampleBase implements CodeGenExampleInterface1, CodeGenExampleInterface2, CodeGenExampleInterface3 {
+    dynamic basicField;
+
+    final int fieldWithModifier1 = 1;
+
 }

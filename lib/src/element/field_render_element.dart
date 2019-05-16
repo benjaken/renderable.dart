@@ -2,7 +2,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/element/class_member_render_element.dart';
 import 'package:code_gen/src/element/property_including_render_element.dart';
-import 'package:code_gen/src/template/class_field_render_field.dart';
+import 'package:code_gen/src/template/class_field_render_element_template.dart';
 import 'package:code_gen/src/type/interface_render_type.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
@@ -43,7 +43,7 @@ class FieldRenderElement extends Renderable
     assert(!isFinal || !isConst, 'Members can\'t be declared to be both final and const');
 
     return mu.render(
-      class_field_render_field,
+      class_field_render_element_template,
       this,
     );
   }
