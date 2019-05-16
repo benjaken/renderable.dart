@@ -1,4 +1,3 @@
-import 'package:analyzer/dart/element/element.dart';
 import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/element/field_render_element.dart';
 import 'package:code_gen/src/element/type_parameter_render_element.dart';
@@ -18,6 +17,7 @@ class ClassRenderElement extends Renderable implements TypeParameterizedRenderEl
   /// interface list
   List<InterfaceRenderType> interfaces;
 
+  /// field list
   List<FieldRenderElement> fields;
 
   @override

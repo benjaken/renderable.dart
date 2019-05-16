@@ -47,6 +47,20 @@ void main() {
             name: 'simpleGenericField',
             isStatic: true,
             isFinal: true,
+            type: InterfaceRenderType(
+              name: 'SomeFile',
+              prefix: 'sf',
+              typeParameters: [
+                TypeParameterRenderElement(name: 'List'),
+                TypeParameterRenderElement(name: 'int'),
+              ],
+            ),
+            value: RawRenderElement(raw: 'sf.SomeFile()'),
+          ),
+          FieldRenderElement(
+            name: 'complexGenericField',
+            isStatic: true,
+            isFinal: true,
             type: InterfaceRenderType(name: 'SomeFile', prefix: 'sf'),
             value: RawRenderElement(raw: 'sf.SomeFile()'),
           ),

@@ -3,7 +3,6 @@ import 'package:code_gen/src/element/class_member_render_element.dart';
 import 'package:code_gen/src/element/executable_render_element.dart';
 import 'package:code_gen/src/element/parameter_render_element.dart';
 import 'package:code_gen/src/element/type_parameter_render_element.dart';
-import 'package:code_gen/src/element/type_parameterized_render_element.dart';
 import 'package:code_gen/src/type/interface_render_type.dart';
 import 'package:code_gen/src/type/parameterized_render_type.dart';
 
@@ -37,10 +36,10 @@ class MethodRenderElement extends Renderable
   List<TypeParameterRenderElement> typeParameters;
 
   @override
-  ParameterizedRenderType type;
+  ParameterizedRenderType type = null;
 
   @override
   String render() {
-    // TODO: implement render
+    assert(!isAsynchronous || !isGenerator, 'Only one of isAsynchronous and isGenerator can be used');
   }
 }
