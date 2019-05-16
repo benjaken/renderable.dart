@@ -30,6 +30,17 @@ main() {
           InterfaceRenderType(name: 'CodeGenExampleInterface2'),
           InterfaceRenderType(name: 'CodeGenExampleInterface3'),
         ],
+        fields: [
+          FieldRenderElement(
+            name: 'basicField',
+          ),
+          FieldRenderElement(
+            isFinal: true,
+            name: 'fieldWithModifier1',
+            type: InterfaceRenderType(name: 'int'),
+            value: RawRenderElement(raw: '1'),
+          ),
+        ],
       ),
     ],
   ).writeToFile();

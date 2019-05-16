@@ -38,6 +38,7 @@ class ClassRenderElement extends Renderable implements TypeParameterizedRenderEl
         'isAbstract': isAbstract,
         'supertype': supertype,
         'interfacesString': interfaces.isEmpty ? '' : ' implements ${interfaces.join(', ')}',
+        'fields': fields,
       },
     );
   }

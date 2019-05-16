@@ -14,7 +14,4 @@ class VariableRenderElement implements RenderElement {
 
   @override
   String name;
-
-  @override
-  List<ElementAnnotation> metadata;
 }
