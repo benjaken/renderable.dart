@@ -47,7 +47,7 @@ void main() {
       ClassRenderElement(
         isAbstract: true,
         name: 'MyHelloWorld',
-        superType: InterfaceRenderType(name: 'HelloWorld'),
+        supertype: InterfaceRenderType(name: 'HelloWorld'),
       ),
     ],
   ).writeToFile();
