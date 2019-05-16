@@ -19,7 +19,7 @@ void main() {
 }
 ```
 
-It will generates
+It will generate:
 ```dart
 // file: helloWorld.dart
 
@@ -27,3 +27,7 @@ class HelloWorld {
   
 }
 ```
+
+explains:
+1. `FileRenderElement` will create a file element which can generate a file using `renders` and `imports` to `filePath`.
+1. `ClassRenderElement` will create a class element model which can generate a class with the given `name`.
