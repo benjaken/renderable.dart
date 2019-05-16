@@ -41,6 +41,7 @@ class FieldRenderElement extends Renderable
   String render() {
     assert(type != null, 'Field type can\'t be null');
     assert(!isFinal || !isConst, 'Members can\'t be declared to be both final and const');
+    assert((isConst && isStatic) || (!isConst), 'Only static fields can be declared as const');
 
     return mu.render(
       class_field_render_element_template,
