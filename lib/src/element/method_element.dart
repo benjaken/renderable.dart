@@ -8,6 +8,7 @@ import 'package:code_gen/src/template/class_method_element_template.dart';
 import 'package:code_gen/src/type/dart_type.dart';
 import 'package:code_gen/src/type/interface_type.dart';
 import 'package:code_gen/src/type/parameterized_type.dart';
+import 'package:code_gen/src/util/parameter_element_util.dart';
 import 'package:code_gen/src/util/template_util.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
@@ -81,6 +82,7 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
         ),
         'body': body,
         'typeParametersString': _renderTypeParameters(),
+        'parametersString': ParameterElementUtil.generateParameter(parameters),
       },
     );
   }

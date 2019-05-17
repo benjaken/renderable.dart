@@ -1,5 +1,5 @@
 # CodeGen
-A element-model-based Dart code generator
+A element-model-based analyzer-like Dart code generator.
 
 ### RoadMap
 - [x] File

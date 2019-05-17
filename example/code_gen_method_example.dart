@@ -114,7 +114,52 @@ void main() {
             name: 'parametersMethod',
             returnType: DartType(name: 'void'),
             parameters: [
-              ParameterElement(),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'a',
+                isRequired: true,
+              ),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'b',
+                isRequired: true,
+              ),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'c',
+                isNamed: true,
+              ),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'd',
+                isNamed: true,
+              ),
+            ],
+          ),
+          MethodElement(
+            name: 'parametersMethod2',
+            returnType: DartType(name: 'void'),
+            parameters: [
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'a',
+                isRequired: true,
+              ),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'b',
+                isRequired: true,
+              ),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'c',
+                isOptionalPositional: true,
+              ),
+              ParameterElement(
+                type: DartType(name: 'int'),
+                name: 'd',
+                isOptionalPositional: true,
+              ),
             ],
           ),
         ],

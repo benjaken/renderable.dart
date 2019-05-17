@@ -37,4 +37,12 @@ return c;
       
     }
 
+    void parametersMethod(int a, int b, {int c, int d}) {
+      
+    }
+
+    void parametersMethod2(int a, int b, [int c, int d]) {
+      
+    }
+
 }
