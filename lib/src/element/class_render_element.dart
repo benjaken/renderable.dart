@@ -1,5 +1,6 @@
 import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/element/field_render_element.dart';
+import 'package:code_gen/src/element/method_render_element.dart';
 import 'package:code_gen/src/element/type_parameter_render_element.dart';
 import 'package:code_gen/src/element/type_parameterized_render_element.dart';
 import 'package:code_gen/src/template/class_render_element_template.dart';
@@ -20,6 +21,9 @@ class ClassRenderElement extends Renderable implements TypeParameterizedRenderEl
   /// field list
   List<FieldRenderElement> fields;
 
+  /// method list
+  List<MethodRenderElement> methods;
+
   @override
   String name;
 
@@ -35,11 +39,13 @@ class ClassRenderElement extends Renderable implements TypeParameterizedRenderEl
     this.isAbstract = false,
     this.interfaces,
     this.fields,
+    this.methods,
     this.typeParameters,
   }) {
-    this.interfaces ??= [];
-    this.fields ??= [];
-    this.typeParameters ??= [];
+    interfaces ??= [];
+    fields ??= [];
+    methods ??= [];
+    typeParameters ??= [];
   }
 
   @override
@@ -52,6 +58,7 @@ class ClassRenderElement extends Renderable implements TypeParameterizedRenderEl
         'supertype': supertype,
         'interfacesString': interfaces.isEmpty ? '' : ' implements ${interfaces.join(', ')}',
         'fields': fields,
+        'methods': methods,
         'typeParametersString': typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>',
       },
     );

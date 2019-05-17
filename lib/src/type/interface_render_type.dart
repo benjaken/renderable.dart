@@ -21,6 +21,7 @@ class InterfaceRenderType extends Renderable implements ParameterizedRenderType 
     this.typeParameters,
     this.typeArguments,
   }) {
+    assert(!this.name.contains('<'), 'The name shouldn\'t contains generic type');
     this.typeParameters ??= [];
     this.typeArguments ??= [];
   }
