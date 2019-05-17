@@ -62,6 +62,10 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
     parameters ??= [];
   }
 
+  String _renderTypeParameters() {
+    return typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>';
+  }
+
   @override
   String render() {
     return mu.render(
@@ -76,6 +80,7 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
           isGenerator: isGenerator,
         ),
         'body': body,
+        'typeParametersString': _renderTypeParameters(),
       },
     );
   }

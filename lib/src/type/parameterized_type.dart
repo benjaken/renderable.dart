@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 class ParameterizedType extends Renderable implements DartType {
   String prefix;
 
-  List<ParameterizedType> typeArguments;
+  List<DartType> typeArguments;
 
   List<TypeParameterElement> typeParameters;
 

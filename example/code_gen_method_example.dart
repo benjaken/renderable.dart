@@ -81,6 +81,42 @@ void main() {
               ],
             ),
           ),
+          MethodElement(
+            name: 'returnGenericValueMethod',
+            returnType: InterfaceType(
+              name: 'Stream',
+              typeArguments: [
+                InterfaceType(
+                  name: 'List',
+                  typeArguments: [
+                    DartType(
+                      name: 'int',
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          MethodElement(
+            name: 'genericMethod',
+            returnType: DartType(name: 'void'),
+            typeParameters: [
+              TypeParameterElement(name: 'T'),
+              TypeParameterElement(
+                name: 'R',
+                bound: DartType(
+                  name: 'List',
+                ),
+              ),
+            ],
+          ),
+          MethodElement(
+            name: 'parametersMethod',
+            returnType: DartType(name: 'void'),
+            parameters: [
+              ParameterElement(),
+            ],
+          ),
         ],
       ),
     ],

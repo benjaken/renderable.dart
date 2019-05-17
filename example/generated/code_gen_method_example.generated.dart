@@ -1,18 +1,40 @@
+
+
 class CodeGenMethodExample {
-  dynamic defaultMethod() {}
 
-  int basicMethod() {
-    int a = 100;
-    int b = 33;
-    int c = a + b;
-    return c;
-  }
+    dynamic defaultMethod() {
+      
+    }
 
-  static String staticMethod() {}
+    int basicMethod() {
+      int a = 100;
+int b = 33;
+int c = a + b;
+return c;
+    }
 
-  static Future<String> staticAsyncMethod() async {}
+    static String staticMethod() {
+      
+    }
 
-  Iterable<String> syncGeneratorMethod() sync* {}
+    static Future<String> staticAsyncMethod() async {
+      
+    }
 
-  Stream<String> asyncGeneratorMethod() async* {}
+    Iterable<String> syncGeneratorMethod() sync* {
+      
+    }
+
+    Stream<String> asyncGeneratorMethod() async* {
+      
+    }
+
+    Stream<List<int>> returnGenericValueMethod() {
+      
+    }
+
+    void genericMethod<T, R extends List>() {
+      
+    }
+
 }
