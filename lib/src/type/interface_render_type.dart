@@ -10,6 +10,9 @@ class InterfaceRenderType extends Renderable implements ParameterizedRenderType 
   String name;
 
   @override
+  List<ParameterizedRenderType> typeArguments;
+
+  @override
   List<TypeParameterRenderElement> typeParameters;
 
   InterfaceRenderType({

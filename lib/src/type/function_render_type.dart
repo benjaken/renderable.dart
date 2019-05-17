@@ -10,6 +10,9 @@ class FunctionRenderType extends Renderable implements ParameterizedRenderType {
   String prefix = null;
 
   @override
+  List<ParameterizedRenderType> typeArguments;
+
+  @override
   List<TypeParameterRenderElement> typeParameters;
 
   @override
