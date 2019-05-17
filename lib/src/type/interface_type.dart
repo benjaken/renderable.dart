@@ -40,7 +40,7 @@ class InterfaceType extends Renderable implements ParameterizedType {
     assert(typeArguments.isEmpty || typeParameters.isEmpty,
         'Only one of typeArguments and typeParameters can be used',);
 
-    String generic = typeArguments.isEmpty ? _renderTypeParameter() : _renderTypeArguments();
+    String generic = typeArguments.isNotEmpty ? _renderTypeArguments() : _renderTypeParameter();
 
     if (prefix == null) {
       return '$name$generic';

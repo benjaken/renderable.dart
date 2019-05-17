@@ -14,7 +14,7 @@ class FileElement extends Renderable implements Writable {
   List<Renderable> renders;
 
   FileElement({
-    @required this.filePath,
+    this.filePath,
     this.renders,
     this.imports,
   }) {
@@ -24,6 +24,8 @@ class FileElement extends Renderable implements Writable {
 
   @override
   void writeToFile() {
+    assert(filePath != null, 'You must provide a filePath to write.');
+
     file.writeAsStringSync(render());
   }
 

@@ -16,7 +16,12 @@ class ParameterizedType extends Renderable implements DartType {
   ParameterizedType({
     @required this.name,
     this.prefix,
-  });
+    this.typeParameters,
+    this.typeArguments,
+  }) {
+    typeParameters ??= [];
+    typeArguments ??= [];
+  }
 
   @override
   String render() {

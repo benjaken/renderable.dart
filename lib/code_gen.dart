@@ -5,14 +5,15 @@ export 'src/element/import_element.dart';
 export 'src/element/class_element.dart';
 export 'src/element/field_element.dart';
 export 'src/element/method_element.dart';
-export 'src/element/parameter_element.dart';
-
-/// type parameter
 export 'src/element/type_parameter_element.dart';
-
+export 'src/element/parameter_element.dart';
 export 'src/element/raw_element.dart';
 
+/// type
+export 'src/type/dart_type.dart';
 export 'src/type/interface_type.dart';
+export 'src/type/function_type.dart';
+export 'src/type/parameterized_type.dart';
 
 /// misc
 export 'src/misc/function_body.dart';
@@ -22,4 +23,7 @@ export 'src/misc/variable.dart';
 export 'src/statement/return_statement.dart';
 
 /// value
-export 'package:code_gen/src/value/int_value.dart';
+export 'src/value/int_value.dart';
+
+/// util
+export 'src/util/analyzer_element_converter_util.dart';
