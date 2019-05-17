@@ -1,0 +1,14 @@
+# Read about `build.yaml` at https://pub.dartlang.org/packages/build_config
+targets:
+  $default:
+    builders:
+      demo|mirror_builder:
+        generate_for:
+          exclude: ['lib/src/**']
+builders:
+  shared_renderer_builder:
+    import: 'package:demo/builder.dart'
+    builder_factories: ['mirrorBuilder']
+    build_extensions: { '.dart': ['.mirror.dart'] }
+    auto_apply: root_package
+    build_to: source
