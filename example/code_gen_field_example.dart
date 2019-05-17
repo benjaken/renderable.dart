@@ -52,7 +52,7 @@ void main() {
               prefix: 'sf',
               typeArguments: [
                 InterfaceRenderType(name: 'String'),
-                InterfaceRenderType(name: 'int'),
+                InterfaceRenderType(name: 'SomeFile2', prefix: 'sf'),
               ],
             ),
             value: RawRenderElement(raw: 'sf.SomeFile()'),

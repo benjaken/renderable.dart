@@ -17,7 +17,7 @@ class CodeGenFieldExample {
 
     static final sf.SomeFile staticFinalClassTypedField = sf.SomeFile();
 
-    static final sf.SomeFile<String, int> simpleGenericField = sf.SomeFile();
+    static final sf.SomeFile<String, sf.SomeFile2> simpleGenericField = sf.SomeFile();
 
     static final sf.SomeFile<Map<List<double>, int>, String> complexGenericField = sf.SomeFile();
 
