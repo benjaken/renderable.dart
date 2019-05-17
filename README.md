@@ -11,6 +11,14 @@ A element-model-based Dart code generator
         - [ ] Getter
         - [ ] Setter
     - [ ] Method
+        - [x] Basic method
+        - [x] Generic type (Type parameter)
+        - [x] Statement body
+        - [ ] Parameter
+            - [ ] Basic parameter
+            - [ ] Generic parameter
+            - [ ] Different type parameter
+            - [ ] Function parameter
 - [ ] Function
 - [ ] Statement
 - [ ] Value
