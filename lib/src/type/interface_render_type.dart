@@ -19,16 +19,31 @@ class InterfaceRenderType extends Renderable implements ParameterizedRenderType 
     @required this.name,
     this.prefix,
     this.typeParameters,
+    this.typeArguments,
   }) {
     this.typeParameters ??= [];
+    this.typeArguments ??= [];
+  }
+
+  String _renderTypeParameter() {
+    return typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>';
+  }
+
+  String _renderTypeArguments() {
+    return typeArguments.isEmpty ? '' : '<${typeArguments.join(', ')}>';
   }
 
   @override
   String render() {
-    String typeParametersString = typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>';
+    assert(typeArguments.isEmpty || typeParameters.isEmpty,
+        'Only one of typeArguments and typeParameters can be used',);
+
+    String generic = typeArguments.isEmpty ? _renderTypeParameter() : _renderTypeArguments();
+
     if (prefix == null) {
-      return '$name$typeParametersString';
+      return '$name$generic';
     }
-    return '$prefix.$name$typeParametersString';
+
+    return '$prefix.$name$generic';
   }
 }

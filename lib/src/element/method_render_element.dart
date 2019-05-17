@@ -40,6 +40,7 @@ class MethodRenderElement extends Renderable
 
   @override
   String render() {
-    assert(!isAsynchronous || !isGenerator, 'Only one of isAsynchronous and isGenerator can be used');
+    assert(
+        !isAsynchronous || !isGenerator, 'Only one of isAsynchronous and isGenerator can be used',);
   }
 }

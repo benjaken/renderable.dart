@@ -50,9 +50,9 @@ void main() {
             type: InterfaceRenderType(
               name: 'SomeFile',
               prefix: 'sf',
-              typeParameters: [
-                TypeParameterRenderElement(name: 'List'),
-                TypeParameterRenderElement(name: 'int'),
+              typeArguments: [
+                InterfaceRenderType(name: 'String'),
+                InterfaceRenderType(name: 'int'),
               ],
             ),
             value: RawRenderElement(raw: 'sf.SomeFile()'),
@@ -61,7 +61,29 @@ void main() {
             name: 'complexGenericField',
             isStatic: true,
             isFinal: true,
-            type: InterfaceRenderType(name: 'SomeFile', prefix: 'sf'),
+            type: InterfaceRenderType(
+              name: 'SomeFile',
+              prefix: 'sf',
+              typeArguments: [
+                InterfaceRenderType(
+                  name: 'Map',
+                  typeArguments: [
+                    InterfaceRenderType(
+                      name: 'List',
+                      typeArguments: [
+                        InterfaceRenderType(
+                          name: 'double',
+                        ),
+                      ],
+                    ),
+                    InterfaceRenderType(
+                      name: 'int',
+                    ),
+                  ],
+                ),
+                InterfaceRenderType(name: 'String'),
+              ],
+            ),
             value: RawRenderElement(raw: 'sf.SomeFile()'),
           ),
 //          FieldRenderElement(
