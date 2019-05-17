@@ -16,7 +16,7 @@ void main() {
             body: FunctionBody(
               statements: [
                 ReturnStatement(
-                  returnValue: IntVariable(value: 133),
+                  returnValue: IntValue(value: 133),
                 ),
               ],
             ),

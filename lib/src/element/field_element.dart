@@ -2,6 +2,7 @@ import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/element/class_member_element.dart';
 import 'package:code_gen/src/element/property_including_element.dart';
 import 'package:code_gen/src/template/class_field_element_template.dart';
+import 'package:code_gen/src/type/dart_type.dart';
 import 'package:code_gen/src/type/interface_type.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
@@ -20,7 +21,7 @@ class FieldElement extends Renderable implements PropertyIncludingElement, Class
   bool isStatic;
 
   @override
-  InterfaceType type;
+  DartType type;
 
   Renderable value;
 

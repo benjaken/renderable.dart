@@ -1,0 +1,3 @@
+class DartType {
+  String name;
+}

@@ -19,5 +19,5 @@ export 'src/misc/function_body.dart';
 /// statement
 export 'src/statement/return_statement.dart';
 
-/// variable
-export 'src/variable/int_variable.dart';
+/// value
+export 'package:code_gen/src/value/int_value.dart';

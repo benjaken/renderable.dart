@@ -1,9 +1,9 @@
-import 'package:code_gen/src/contract/statement_renderable.dart';
-import 'package:code_gen/src/contract/variable_renderable.dart';
+import 'package:code_gen/src/contract/statement.dart';
+import 'package:code_gen/src/contract/value_renderable.dart';
 import 'package:meta/meta.dart';
 
-class ReturnStatement extends StatementRenderable {
-  VariableRenderable returnValue;
+class ReturnStatement extends Statement {
+  ValueRenderable returnValue;
 
   ReturnStatement({
     @required this.returnValue,
