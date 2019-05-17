@@ -1,4 +1,7 @@
 import 'package:code_gen/code_gen.dart';
+import 'package:code_gen/src/statement/addition_statement.dart';
+import 'package:code_gen/src/statement/declaration_statement.dart';
+import 'package:code_gen/src/type/dart_type.dart';
 
 void main() {
   FileElement(
@@ -15,8 +18,28 @@ void main() {
             returnType: InterfaceType(name: 'int'),
             body: FunctionBody(
               statements: [
+                DeclarationStatement(
+                  name: 'a',
+                  type: DartType(name: 'int'),
+                  value: IntValue(value: 100),
+                ),
+                DeclarationStatement(
+                  name: 'b',
+                  type: DartType(name: 'int'),
+                  value: IntValue(value: 33),
+                ),
+                DeclarationStatement(
+                  name: 'c',
+                  type: DartType(name: 'int'),
+                  value: AdditionStatement(
+                    values: [
+                      Variable(name: 'a'),
+                      Variable(name: 'b'),
+                    ],
+                  ),
+                ),
                 ReturnStatement(
-                  returnValue: IntValue(value: 133),
+                  returnValue: Variable(name: 'c'),
                 ),
               ],
             ),

@@ -1,7 +1,7 @@
-import 'package:code_gen/src/contract/renderable.dart';
+import 'package:code_gen/src/contract/value.dart';
 import 'package:meta/meta.dart';
 
-class Variable extends Renderable {
+class Variable extends Value {
   String name;
 
   Variable({

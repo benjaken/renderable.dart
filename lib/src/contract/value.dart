@@ -1,3 +1,3 @@
 import 'package:code_gen/src/contract/renderable.dart';
 
-abstract class ValueRenderable extends Renderable {}
+abstract class Value extends Renderable {}

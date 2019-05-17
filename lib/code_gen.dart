@@ -15,6 +15,7 @@ export 'src/type/interface_type.dart';
 
 /// misc
 export 'src/misc/function_body.dart';
+export 'src/misc/variable.dart';
 
 /// statement
 export 'src/statement/return_statement.dart';

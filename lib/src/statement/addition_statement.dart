@@ -2,15 +2,15 @@ import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/contract/value.dart';
 import 'package:meta/meta.dart';
 
-class IntValue extends Value {
-  int value;
+class AdditionStatement extends Renderable {
+  List<Value> values;
 
-  IntValue({
-    @required this.value,
+  AdditionStatement({
+    @required this.values,
   });
 
   @override
   String render() {
-    return value.toString();
+    return values.join(' + ');
   }
 }
