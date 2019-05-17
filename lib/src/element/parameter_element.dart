@@ -3,6 +3,7 @@ import 'package:code_gen/src/element/local_element.dart';
 import 'package:code_gen/src/element/type_parameter_element.dart';
 import 'package:code_gen/src/element/variable_element.dart';
 import 'package:code_gen/src/type/dart_type.dart';
+import 'package:code_gen/src/util/parameter_element_util.dart';
 import 'package:meta/meta.dart';
 
 class ParameterElement extends Renderable implements VariableElement, LocalElement {
@@ -17,6 +18,8 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
   String defaultValue;
 
   List<TypeParameterElement> typeParameters;
+
+  List<ParameterElement> parameters;
 
   @override
   bool isConst;
@@ -41,12 +44,20 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
     this.isOptionalPositional = false,
     this.hasRequired,
     this.defaultValue,
+    this.typeParameters,
+    this.parameters,
   }) {
-    this.type ??= DartType(name: 'dynamic');
+    type ??= DartType(name: 'dynamic');
+    typeParameters ??= [];
+    parameters ??= [];
   }
 
   @override
   String render() {
-    return '$type $name';
+    if (parameters.isEmpty) {
+      return '$type $name';
+    }
+
+    return '$type $name(${ParameterElementUtil.generateParameter(parameters)})';
   }
 }

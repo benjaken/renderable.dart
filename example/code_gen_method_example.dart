@@ -162,6 +162,45 @@ void main() {
               ),
             ],
           ),
+          MethodElement(
+            name: 'genericParameterMethod',
+            returnType: DartType(name: 'void'),
+            parameters: [
+              ParameterElement(
+                type: InterfaceType(
+                  name: 'List',
+                  typeArguments: [
+                    DartType(name: 'int'),
+                  ],
+                ),
+                name: 'a',
+                isOptionalPositional: true,
+              ),
+            ],
+          ),
+          MethodElement(
+            name: 'functionParameterMethod',
+            returnType: DartType(name: 'void'),
+            parameters: [
+              ParameterElement(
+                type: InterfaceType(
+                  name: 'List',
+                  typeArguments: [
+                    DartType(name: 'int'),
+                  ],
+                ),
+                name: 'a',
+                isRequired: true,
+                parameters: [
+                  ParameterElement(
+                    name: 'd',
+                    type: DartType(name: 'double'),
+                    isRequired: true,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
     ],

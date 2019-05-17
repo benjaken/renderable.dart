@@ -15,10 +15,10 @@ A element-model-based analyzer-like Dart code generator.
         - [x] Generic type (Type parameter)
         - [x] Statement body
         - [ ] Parameter
-            - [ ] Basic parameter
+            - [x] Basic parameter
             - [ ] Generic parameter
-            - [ ] Different type parameter
-            - [ ] Function parameter
+            - [x] Different type parameter
+            - [x] Function parameter
 - [ ] Function
 - [ ] Statement
 - [ ] Value
