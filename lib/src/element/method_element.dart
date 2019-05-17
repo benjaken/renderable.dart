@@ -1,17 +1,19 @@
 import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/element/class_member_render_element.dart';
-import 'package:code_gen/src/element/executable_render_element.dart';
-import 'package:code_gen/src/element/parameter_render_element.dart';
-import 'package:code_gen/src/element/type_parameter_render_element.dart';
-import 'package:code_gen/src/template/class_method_render_element_template.dart';
-import 'package:code_gen/src/type/interface_render_type.dart';
-import 'package:code_gen/src/type/parameterized_render_type.dart';
+import 'package:code_gen/src/element/class_member_element.dart';
+import 'package:code_gen/src/element/executable_element.dart';
+import 'package:code_gen/src/element/parameter_element.dart';
+import 'package:code_gen/src/element/type_parameter_element.dart';
+import 'package:code_gen/src/misc/function_body.dart';
+import 'package:code_gen/src/template/class_method_element_template.dart';
+import 'package:code_gen/src/type/interface_type.dart';
+import 'package:code_gen/src/type/parameterized_type.dart';
 import 'package:code_gen/src/util/template_util.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 
-class MethodRenderElement extends Renderable
-    implements ClassMemberRenderElement, ExecutableRenderElement {
+class MethodElement extends Renderable implements ClassMemberElement, ExecutableElement {
+  FunctionBody body;
+
   @override
   bool isStatic;
 
@@ -31,18 +33,18 @@ class MethodRenderElement extends Renderable
   String name;
 
   @override
-  List<ParameterRenderElement> parameters;
+  List<ParameterElement> parameters;
 
   @override
-  InterfaceRenderType returnType;
+  InterfaceType returnType;
 
   @override
-  List<TypeParameterRenderElement> typeParameters;
+  List<TypeParameterElement> typeParameters;
 
   @override
-  ParameterizedRenderType type = null;
+  ParameterizedType type = null;
 
-  MethodRenderElement({
+  MethodElement({
     @required this.name,
     this.returnType,
     this.isAbstract = false,
@@ -52,8 +54,9 @@ class MethodRenderElement extends Renderable
     this.isGenerator = false,
     this.typeParameters,
     this.parameters,
+    this.body,
   }) {
-    returnType ??= InterfaceRenderType(name: 'dynamic');
+    returnType ??= InterfaceType(name: 'dynamic');
     typeParameters ??= [];
     parameters ??= [];
   }
@@ -61,7 +64,7 @@ class MethodRenderElement extends Renderable
   @override
   String render() {
     return mu.render(
-      class_method_render_element_template,
+      class_method_element_template,
       {
         'name': name,
         'returnType': returnType,
@@ -71,6 +74,7 @@ class MethodRenderElement extends Renderable
           isAsynchronous: isAsynchronous,
           isGenerator: isGenerator,
         ),
+        'body': body,
       },
     );
   }

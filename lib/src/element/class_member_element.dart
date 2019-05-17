@@ -1,0 +1,3 @@
+class ClassMemberElement {
+  bool isStatic;
+}

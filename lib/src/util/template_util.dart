@@ -1,16 +1,17 @@
 import 'package:code_gen/code_gen.dart';
+import 'package:code_gen/src/type/interface_type.dart';
 
 class TemplateUtil {
-  static InterfaceRenderType wrapTypeArguments(
-    InterfaceRenderType origin,
-    InterfaceRenderType wrapper,
+  static InterfaceType wrapTypeArguments(
+    InterfaceType origin,
+    InterfaceType wrapper,
   ) {
     return wrapper..typeArguments = [origin];
   }
 
-  static InterfaceRenderType wrapFutureIf(InterfaceRenderType origin, bool condition) {
+  static InterfaceType wrapFutureIf(InterfaceType origin, bool condition) {
     if (!condition) return origin;
-    return wrapTypeArguments(origin, InterfaceRenderType(name: 'Future'));
+    return wrapTypeArguments(origin, InterfaceType(name: 'Future'));
   }
 
   static String generateModifiers({

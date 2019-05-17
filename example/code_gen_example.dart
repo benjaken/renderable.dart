@@ -1,44 +1,44 @@
 import 'dart:io';
 
 import 'package:code_gen/code_gen.dart';
-import 'package:code_gen/src/element/file_render_element.dart';
+import 'package:code_gen/src/element/file_element.dart';
 
 main() {
-  FileRenderElement(
+  FileElement(
     filePath: 'example/generated/code_gen_example.generated.dart',
     renders: [
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenExampleInterface1',
         isAbstract: true,
       ),
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenExampleInterface2',
         isAbstract: true,
       ),
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenExampleInterface3',
         isAbstract: true,
       ),
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenExampleBase',
       ),
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenExample',
-        supertype: InterfaceRenderType(name: 'CodeGenExampleBase'),
+        supertype: InterfaceType(name: 'CodeGenExampleBase'),
         interfaces: [
-          InterfaceRenderType(name: 'CodeGenExampleInterface1'),
-          InterfaceRenderType(name: 'CodeGenExampleInterface2'),
-          InterfaceRenderType(name: 'CodeGenExampleInterface3'),
+          InterfaceType(name: 'CodeGenExampleInterface1'),
+          InterfaceType(name: 'CodeGenExampleInterface2'),
+          InterfaceType(name: 'CodeGenExampleInterface3'),
         ],
         fields: [
-          FieldRenderElement(
+          FieldElement(
             name: 'basicField',
           ),
-          FieldRenderElement(
+          FieldElement(
             isFinal: true,
             name: 'fieldWithModifier1',
-            type: InterfaceRenderType(name: 'int'),
-            value: RawRenderElement(raw: '1'),
+            type: InterfaceType(name: 'int'),
+            value: RawElement(raw: '1'),
           ),
         ],
       ),

@@ -1,6 +1,6 @@
-import 'package:code_gen/src/element/function_typed_render_element.dart';
+import 'package:code_gen/src/element/function_typed_element.dart';
 
-abstract class ExecutableRenderElement implements FunctionTypedRenderElement {
+abstract class ExecutableElement implements FunctionTypedElement {
   /// true if this executable element is abstract. Executable elements are abstract if they are not external and have no body.
   bool isAbstract;
 

@@ -1,46 +1,46 @@
 import 'package:code_gen/code_gen.dart';
 
 void main() {
-  FileRenderElement(
+  FileElement(
     filePath: 'example/generated/code_gen_class_example.generated.dart',
     renders: [
-      ClassRenderElement(
+      ClassElement(
         name: 'ClassExample1',
       ),
-      ClassRenderElement(
+      ClassElement(
         isAbstract: true,
         name: 'ClassExample2',
       ),
-      ClassRenderElement(
+      ClassElement(
         isAbstract: true,
         name: 'ClassExample3',
-        supertype: InterfaceRenderType(name: 'Object'),
+        supertype: InterfaceType(name: 'Object'),
       ),
-      ClassRenderElement(
+      ClassElement(
         isAbstract: true,
         name: 'ClassExample4',
-        supertype: InterfaceRenderType(name: 'Object'),
+        supertype: InterfaceType(name: 'Object'),
       ),
-      ClassRenderElement(
+      ClassElement(
         isAbstract: true,
         name: 'ClassExample5',
-        supertype: InterfaceRenderType(name: 'Object'),
+        supertype: InterfaceType(name: 'Object'),
         interfaces: [
-          InterfaceRenderType(name: 'ClassExample3'),
-          InterfaceRenderType(name: 'ClassExample4'),
+          InterfaceType(name: 'ClassExample3'),
+          InterfaceType(name: 'ClassExample4'),
         ],
       ),
-      ClassRenderElement(
+      ClassElement(
         isAbstract: true,
         name: 'ClassExample6',
-        supertype: InterfaceRenderType(name: 'Object'),
+        supertype: InterfaceType(name: 'Object'),
         interfaces: [
-          InterfaceRenderType(name: 'ClassExample3'),
-          InterfaceRenderType(name: 'ClassExample4'),
+          InterfaceType(name: 'ClassExample3'),
+          InterfaceType(name: 'ClassExample4'),
         ],
         typeParameters: [
-          TypeParameterRenderElement(name: 'T'),
-          TypeParameterRenderElement(name: 'S'),
+          TypeParameterElement(name: 'T'),
+          TypeParameterElement(name: 'S'),
         ],
       ),
     ],

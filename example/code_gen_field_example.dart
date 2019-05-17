@@ -1,97 +1,94 @@
 import 'package:code_gen/code_gen.dart';
 
 void main() {
-  FileRenderElement(
+  FileElement(
     filePath: 'example/generated/code_gen_field_example.generated.dart',
     imports: [
-      ImportRenderElement(path: '../misc/some_file.dart', prefix: 'sf'),
+      ImportElement(path: '../misc/some_file.dart', prefix: 'sf'),
     ],
     renders: [
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenFieldExample',
         fields: [
-          FieldRenderElement(name: 'simpleField'),
-          FieldRenderElement(
+          FieldElement(name: 'simpleField'),
+          FieldElement(
             name: 'finalField',
             isFinal: true,
-            value: RawRenderElement(raw: '1'),
+            value: RawElement(raw: '1'),
           ),
-          FieldRenderElement(
+          FieldElement(
             name: 'staticConstField',
             isStatic: true,
             isConst: true,
-            value: RawRenderElement(raw: '1'),
+            value: RawElement(raw: '1'),
           ),
-          FieldRenderElement(name: 'staticField', isStatic: true),
-          FieldRenderElement(
-              name: 'staticFinalField',
-              isStatic: true,
-              isFinal: true,
-              value: RawRenderElement(raw: '1')),
-          FieldRenderElement(
+          FieldElement(name: 'staticField', isStatic: true),
+          FieldElement(
+              name: 'staticFinalField', isStatic: true, isFinal: true, value: RawElement(raw: '1')),
+          FieldElement(
             name: 'typedField',
-            type: InterfaceRenderType(name: 'Object'),
+            type: InterfaceType(name: 'Object'),
           ),
-          FieldRenderElement(
+          FieldElement(
             name: 'classTypedField',
-            type: InterfaceRenderType(name: 'SomeFile', prefix: 'sf'),
+            type: InterfaceType(name: 'SomeFile', prefix: 'sf'),
           ),
-          FieldRenderElement(
+          FieldElement(
             name: 'staticFinalClassTypedField',
             isStatic: true,
             isFinal: true,
-            type: InterfaceRenderType(name: 'SomeFile', prefix: 'sf'),
-            value: RawRenderElement(raw: 'sf.SomeFile()'),
+            type: InterfaceType(name: 'SomeFile', prefix: 'sf'),
+            value: RawElement(raw: 'sf.SomeFile()'),
           ),
-          FieldRenderElement(
+          FieldElement(
             name: 'simpleGenericField',
             isStatic: true,
             isFinal: true,
-            type: InterfaceRenderType(
+            type: InterfaceType(
               name: 'SomeFile',
               prefix: 'sf',
               typeArguments: [
-                InterfaceRenderType(name: 'String'),
-                InterfaceRenderType(name: 'SomeFile2', prefix: 'sf'),
+                InterfaceType(name: 'String'),
+                InterfaceType(name: 'SomeFile2', prefix: 'sf'),
               ],
             ),
-            value: RawRenderElement(raw: 'sf.SomeFile()'),
+            value: RawElement(raw: 'sf.SomeFile()'),
           ),
-          FieldRenderElement(
+          FieldElement(
             name: 'complexGenericField',
             isStatic: true,
             isFinal: true,
-            type: InterfaceRenderType(
+            type: InterfaceType(
               name: 'SomeFile',
               prefix: 'sf',
               typeArguments: [
-                InterfaceRenderType(
+                InterfaceType(
                   name: 'Map',
                   typeArguments: [
-                    InterfaceRenderType(
+                    InterfaceType(
                       name: 'List',
                       typeArguments: [
-                        InterfaceRenderType(
+                        InterfaceType(
                           name: 'double',
                         ),
                       ],
                     ),
-                    InterfaceRenderType(
+                    InterfaceType(
                       name: 'int',
                     ),
                   ],
                 ),
-                InterfaceRenderType(name: 'String'),
+                InterfaceType(name: 'String'),
               ],
             ),
-            value: RawRenderElement(raw: 'sf.SomeFile()'),
+            value: RawElement(raw: 'sf.SomeFile()'),
           ),
-//          FieldRenderElement(
+//          FieldElement(
 //            name: 'complexGenericField',
 //            isStatic: true,
 //            isFinal: true,
-//            type: InterfaceRenderType(name: 'SomeFile', prefix: 'sf'),
-//            value: RawRenderElement(raw: 'sf.SomeFile()'),
+//            type: InterfaceType(name: 'SomeFile', prefix: 'sf'),
+//            value: RawElement(raw: 'sf.SomeFile()'),
 //          ),
         ],
       )

@@ -1,16 +1,16 @@
 import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/template/import_render_element_template.dart';
+import 'package:code_gen/src/template/import_element_template.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 
-class ImportRenderElement extends Renderable {
+class ImportElement extends Renderable {
   String path;
   String prefix;
   bool isDeferred;
   List<String> shows;
   List<String> hides;
 
-  ImportRenderElement({
+  ImportElement({
     @required this.path,
     this.prefix,
     this.isDeferred = false,
@@ -26,7 +26,7 @@ class ImportRenderElement extends Renderable {
     assert(!isDeferred || prefix != null, 'isDeferred can\'t use without prefix');
 
     return mu.render(
-      import_render_element_template,
+      import_element_template,
       {
         'path': path,
         'prefix': prefix,

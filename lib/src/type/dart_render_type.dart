@@ -1,3 +1,0 @@
-class DartRenderType {
-  String name;
-}

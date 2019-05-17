@@ -1,53 +1,60 @@
 import 'package:code_gen/code_gen.dart';
 
 void main() {
-  FileRenderElement(
+  FileElement(
     filePath: 'example/generated/code_gen_method_example.generated.dart',
     renders: [
-      ClassRenderElement(
+      ClassElement(
         name: 'CodeGenMethodExample',
         methods: [
-          MethodRenderElement(
+          MethodElement(
             name: 'defaultMethod',
           ),
-          MethodRenderElement(
+          MethodElement(
             name: 'basicMethod',
-            returnType: InterfaceRenderType(name: 'int'),
+            returnType: InterfaceType(name: 'int'),
+            body: FunctionBody(
+              statements: [
+                ReturnStatement(
+                  returnValue: IntVariable(value: 133),
+                ),
+              ],
+            ),
           ),
-          MethodRenderElement(
+          MethodElement(
             isStatic: true,
             name: 'staticMethod',
-            returnType: InterfaceRenderType(name: 'String'),
+            returnType: InterfaceType(name: 'String'),
           ),
-          MethodRenderElement(
+          MethodElement(
             isStatic: true,
             isAsynchronous: true,
             name: 'staticAsyncMethod',
-            returnType: InterfaceRenderType(
+            returnType: InterfaceType(
               name: 'Future',
               typeArguments: [
-                InterfaceRenderType(name: 'String'),
+                InterfaceType(name: 'String'),
               ],
             ),
           ),
-          MethodRenderElement(
+          MethodElement(
             isGenerator: true,
             name: 'syncGeneratorMethod',
-            returnType: InterfaceRenderType(
+            returnType: InterfaceType(
               name: 'Iterable',
               typeArguments: [
-                InterfaceRenderType(name: 'String'),
+                InterfaceType(name: 'String'),
               ],
             ),
           ),
-          MethodRenderElement(
+          MethodElement(
             isAsynchronous: true,
             isGenerator: true,
             name: 'asyncGeneratorMethod',
-            returnType: InterfaceRenderType(
+            returnType: InterfaceType(
               name: 'Stream',
               typeArguments: [
-                InterfaceRenderType(name: 'String'),
+                InterfaceType(name: 'String'),
               ],
             ),
           ),

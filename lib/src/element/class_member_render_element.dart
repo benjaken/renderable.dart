@@ -1,3 +1,0 @@
-class ClassMemberRenderElement {
-  bool isStatic;
-}
