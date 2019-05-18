@@ -27,5 +27,5 @@ class OriginClass extends Object implements Interface1, Interface2 {
   Iterable<dynamic> method3<C extends Future<dynamic>, D>(int a,
       {int b(String c)}) sync* {}
 
-  Stream<dynamic> method4(int a, {List<List<int>> b, String c}) async* {}
+  Stream<dynamic> method4(int a, {List<List<int>> b, String c = 'dv'}) async* {}
 }

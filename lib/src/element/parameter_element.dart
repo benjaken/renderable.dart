@@ -55,6 +55,8 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
   @override
   String render() {
+    assert(!isRequired || defaultValue == null, 'Required parameter can\'t have default value');
+
     String defaultValueString = defaultValue == null ? '' : ' = $defaultValue';
 
     if (parameters.isNotEmpty) {
@@ -68,6 +70,6 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 //      return '${(type as FunctionType).returnType} $name<${(type as FunctionType).typeParameters.join(', ')}>(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})';
     }
 
-    return '$type $name';
+    return '$type $name$defaultValueString';
   }
 }
