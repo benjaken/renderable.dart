@@ -2,14 +2,14 @@ import 'package:analyzer/dart/element/element.dart' as az;
 import 'package:analyzer/dart/element/type.dart' as az;
 import 'package:code_gen/code_gen.dart';
 
-class AnalyzerTypeConverterUtil {
+class AnalyzerTypeConverter {
   static InterfaceType parseInterfaceType(az.InterfaceType type) {
     return InterfaceType(
       name: type.name,
       prefix: null,
       typeArguments: type.typeArguments.map(parseDartType).toList(),
       typeParameters:
-          type.typeParameters.map(AnalyzerElementConverterUtil.parseTypeParameterElement).toList(),
+          type.typeParameters.map(AnalyzerElementConverter.parseTypeParameterElement).toList(),
     );
   }
 
@@ -29,9 +29,8 @@ class AnalyzerTypeConverterUtil {
         name: type.name,
         prefix: null,
         typeArguments: type.typeArguments.map(parseDartType).toList(),
-        typeParameters: type.typeParameters
-            .map(AnalyzerElementConverterUtil.parseTypeParameterElement)
-            .toList(),
+        typeParameters:
+            type.typeParameters.map(AnalyzerElementConverter.parseTypeParameterElement).toList(),
       );
     }
 
