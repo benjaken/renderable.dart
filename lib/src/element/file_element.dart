@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/contract/writable.dart';
 import 'package:code_gen/src/element/import_element.dart';
-import 'package:meta/meta.dart';
 
 class FileElement extends Renderable implements Writable {
   String filePath;

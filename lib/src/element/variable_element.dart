@@ -1,6 +1,5 @@
 import 'package:code_gen/src/element/element.dart';
 import 'package:code_gen/src/type/dart_type.dart';
-import 'package:code_gen/src/type/interface_type.dart';
 
 class VariableElement implements Element {
   bool isConst;
