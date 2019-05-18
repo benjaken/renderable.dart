@@ -1,5 +1,16 @@
 # CodeGen
-A element-model-based analyzer-like Dart code generator.
+An element-model-based Dart code generator. 
+CodeGen's AnalyzerConverter can convert SourceGen code to CodeGen code by calling one method.
+
+### Updates
+First version will release when ClassElement is finished
+
+### Version Number
+A.B.C
+
+A is Master Version Number: changes when large breaking change happens
+B is Feature Version Number: changes when new feature comes out
+C is Edition Version Number: changes on hotfix and code improvement
 
 ### RoadMap
 - [x] File
