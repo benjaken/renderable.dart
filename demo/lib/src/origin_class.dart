@@ -12,6 +12,8 @@ class OriginClass implements Interface1, Interface2 {
 //  static int intField = 1;
 //  final List<int> listIntField = [1];
   Map<List<Future<int>>, int> nestedField = {};
-//  rx.Observable<int> prefixedField;
-//  rx.Observable<rx.Observable> nestedPrefixedField;
+  rx.Observable<int> prefixedField;
+  rx.Observable<rx.Observable> nestedPrefixedField;
+
+  void method1(int a, int b) {}
 }

@@ -1,10 +1,19 @@
 import 'package:analyzer/dart/element/element.dart' as az;
 import 'package:analyzer/dart/element/type.dart' as az;
 import 'package:code_gen/code_gen.dart';
+import 'package:code_gen/src/converter/analyzer_import_loop_up.dart';
 import 'package:code_gen/src/converter/analyzer_type_converter.dart';
 
 class AnalyzerElementConverter {
-  static ImportElement parseImport(az.ImportElement import) {
+  int id;
+
+  AnalyzerTypeConverter analyzerTypeConverter;
+
+  AnalyzerElementConverter(this.id) {
+    analyzerTypeConverter = AnalyzerTypeConverter(id, this);
+  }
+
+  ImportElement parseImport(az.ImportElement import) {
     if (import?.uri == null) return null;
 
     List<String> shows = [];
@@ -28,32 +37,34 @@ class AnalyzerElementConverter {
     );
   }
 
-  static ClassElement parseClass(az.ClassElement element) {
+  ClassElement parseClass(az.ClassElement element) {
     if (element == null) return null;
+
+    AnalyzerImportLoopUp.parse(element);
 
     return ClassElement(
       isAbstract: element.isAbstract,
       name: element.name,
-      supertype: AnalyzerTypeConverter.parseDartType(element.supertype),
-      interfaces: element.interfaces.map(AnalyzerTypeConverter.parseInterfaceType).toList(),
+      supertype: analyzerTypeConverter.parseDartType(element.supertype),
+      interfaces: element.interfaces.map(analyzerTypeConverter.parseInterfaceType).toList(),
       typeParameters: element.typeParameters.map(parseTypeParameterElement).toList(),
       fields: element.fields.map(parseFieldElement).toList(),
     );
   }
 
-  static TypeParameterElement parseTypeParameterElement(az.TypeParameterElement type) {
+  TypeParameterElement parseTypeParameterElement(az.TypeParameterElement type) {
     if (type == null) return null;
 
     return TypeParameterElement(
       name: type.name,
-      bound: AnalyzerTypeConverter.parseDartType(type.bound),
+      bound: analyzerTypeConverter.parseDartType(type.bound),
     );
   }
 
-  static FieldElement parseFieldElement(az.FieldElement field) {
+  FieldElement parseFieldElement(az.FieldElement field) {
     return FieldElement(
       name: field.name,
-      type: AnalyzerTypeConverter.parseDartType(field.type),
+      type: analyzerTypeConverter.parseDartType(field.type),
       isStatic: field.isStatic,
       isFinal: field.isFinal,
       isConst: field.isConst,
