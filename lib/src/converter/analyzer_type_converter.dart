@@ -20,11 +20,31 @@ class AnalyzerTypeConverter {
     );
   }
 
+  ParameterizedType parseParameterizedType(az.ParameterizedType type) {
+    return ParameterizedType(
+      name: type.name,
+      prefix: AnalyzerImportLoopUp.getPrefix(id, type.element.library.id),
+      typeArguments: type.typeArguments.map(parseDartType).toList(),
+      typeParameters:
+          type.typeParameters.map(analyzerElementConverter.parseTypeParameterElement).toList(),
+    );
+  }
+
+  FunctionType parseFunctionType(az.FunctionType type) {
+    return FunctionType(
+      name: type.name,
+      parameters: type.parameters.map(analyzerElementConverter.parseParameter).toList(),
+      returnType: parseDartType(type.returnType),
+      typeParameters:
+          type.typeParameters.map(analyzerElementConverter.parseTypeParameterElement).toList(),
+    );
+  }
+
   DartType parseDartType(az.DartType type) {
     if (type == null) return null;
 
     if (type is az.FunctionType) {
-      return null;
+      return parseFunctionType(type);
     }
 
     if (type is az.InterfaceType) {
@@ -32,13 +52,7 @@ class AnalyzerTypeConverter {
     }
 
     if (type is az.ParameterizedType) {
-      return ParameterizedType(
-        name: type.name,
-        prefix: AnalyzerImportLoopUp.getPrefix(id, type.element.library.id),
-        typeArguments: type.typeArguments.map(parseDartType).toList(),
-        typeParameters:
-            type.typeParameters.map(analyzerElementConverter.parseTypeParameterElement).toList(),
-      );
+      return parseParameterizedType(type);
     }
 
     if (type is az.TypeParameterType) {

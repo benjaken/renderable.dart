@@ -45,6 +45,7 @@ class AnalyzerElementConverter {
       interfaces: element.interfaces.map(analyzerTypeConverter.parseInterfaceType).toList(),
       typeParameters: element.typeParameters.map(parseTypeParameterElement).toList(),
       fields: element.fields.map(parseFieldElement).toList(),
+      methods: element.methods.map(parseMethod).toList(),
     );
   }
 
@@ -65,6 +66,35 @@ class AnalyzerElementConverter {
       isFinal: field.isFinal,
       isConst: field.isConst,
       value: null,
+    );
+  }
+
+  MethodElement parseMethod(az.MethodElement method) {
+    return MethodElement(
+      isAbstract: method.isAbstract,
+      isAsynchronous: method.isAsynchronous,
+      isStatic: method.isStatic,
+      isExternal: method.isExternal,
+      isGenerator: method.isGenerator,
+      name: method.name,
+      returnType: analyzerTypeConverter.parseDartType(method.returnType),
+      typeParameters: method.typeParameters.map(parseTypeParameterElement).toList(),
+      parameters: method.parameters.map(parseParameter).toList(),
+      body: null,
+    );
+  }
+
+  ParameterElement parseParameter(az.ParameterElement parameter) {
+    return ParameterElement(
+      name: parameter.name,
+      type: analyzerTypeConverter.parseDartType(parameter.type),
+      isRequired: parameter.isNotOptional,
+      isNamed: parameter.isNamed,
+      isOptionalPositional: parameter.isOptionalPositional,
+      hasRequired: parameter.hasRequired,
+      defaultValue: parameter.defaultValueCode,
+      typeParameters: parameter.typeParameters.map(parseTypeParameterElement).toList(),
+//      parameters: parameter.parameters.map(parseParameter).toList(),
     );
   }
 }

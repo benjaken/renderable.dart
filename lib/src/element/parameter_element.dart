@@ -3,6 +3,7 @@ import 'package:code_gen/src/element/local_element.dart';
 import 'package:code_gen/src/element/type_parameter_element.dart';
 import 'package:code_gen/src/element/variable_element.dart';
 import 'package:code_gen/src/type/dart_type.dart';
+import 'package:code_gen/src/type/function_type.dart';
 import 'package:code_gen/src/util/parameter_element_util.dart';
 import 'package:meta/meta.dart';
 
@@ -54,10 +55,19 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
   @override
   String render() {
-    if (parameters.isEmpty) {
-      return '$type $name';
+    String defaultValueString = defaultValue == null ? '' : ' = $defaultValue';
+
+    if (parameters.isNotEmpty) {
+      return '$type $name(${ParameterElementUtil.generateParameter(parameters)})$defaultValueString';
     }
 
-    return '$type $name(${ParameterElementUtil.generateParameter(parameters)})';
+    if (type is FunctionType) {
+//      if ((type as FunctionType).typeParameters.isEmpty) {
+      return '${(type as FunctionType).returnType} $name(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})$defaultValueString';
+//      }
+//      return '${(type as FunctionType).returnType} $name<${(type as FunctionType).typeParameters.join(', ')}>(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})';
+    }
+
+    return '$type $name';
   }
 }
