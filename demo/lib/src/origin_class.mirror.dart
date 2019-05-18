@@ -5,6 +5,7 @@
 // **************************************************************************
 
 import 'package:demo/annotation/mirror.dart';
+import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart' as rx show Observable hide PublishSubject;
 
 abstract class Interface1 extends Object {}
@@ -27,5 +28,6 @@ class OriginClass extends Object implements Interface1, Interface2 {
   Iterable<dynamic> method3<C extends Future<dynamic>, D>(int a,
       {int b(String c)}) sync* {}
 
-  Stream<dynamic> method4(int a, {List<List<int>> b, String c = 'dv'}) async* {}
+  Stream<dynamic> method4(int a,
+      {@required List<List<int>> b, String c = 'dv'}) async* {}
 }

@@ -59,6 +59,9 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
     String defaultValueString = defaultValue == null ? '' : ' = $defaultValue';
 
+    /// todo: use annotation instead
+    String annotationString = hasRequired ? '@required ' : '';
+
     if (parameters.isNotEmpty) {
       return '$type $name(${ParameterElementUtil.generateParameter(parameters)})$defaultValueString';
     }
@@ -70,6 +73,6 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 //      return '${(type as FunctionType).returnType} $name<${(type as FunctionType).typeParameters.join(', ')}>(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})';
     }
 
-    return '$type $name$defaultValueString';
+    return '$annotationString$type $name$defaultValueString';
   }
 }

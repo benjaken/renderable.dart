@@ -1,4 +1,5 @@
 import 'package:demo/annotation/mirror.dart';
+import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart' as rx show Observable hide PublishSubject;
 
 @mirror
@@ -25,7 +26,7 @@ class OriginClass implements Interface1, Interface2 {
 
   Stream<dynamic> method4(
     int a, {
-    List<List<int>> b,
+    @required List<List<int>> b,
     String c = 'dv',
   }) async* {}
 }
