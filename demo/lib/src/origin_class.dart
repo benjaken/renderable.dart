@@ -20,4 +20,12 @@ class OriginClass implements Interface1, Interface2 {
   Future<rx.Observable> method2(int a, [int b(String c)]) async {
     return null;
   }
+
+  Iterable<dynamic> method3<C extends Future, D>(int a, {int b(String c)}) sync* {}
+
+  Stream<dynamic> method4(
+    int a, {
+    List<List<int>> b,
+    String c = 'dv',
+  }) async* {}
 }

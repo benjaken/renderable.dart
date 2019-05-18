@@ -19,4 +19,13 @@ class OriginClass extends Object implements Interface1, Interface2 {
   rx.Observable<int> prefixedField;
 
   rx.Observable<rx.Observable<dynamic>> nestedPrefixedField;
+
+  void method1(int a, int b) {}
+
+  Future<rx.Observable<dynamic>> method2(int a, [int b(String c)]) async {}
+
+  Iterable<dynamic> method3<C extends Future<dynamic>, D>(int a,
+      {int b(String c)}) sync* {}
+
+  Stream<dynamic> method4(int a, {List<List<int>> b, String c}) async* {}
 }
