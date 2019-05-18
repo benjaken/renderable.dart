@@ -4,6 +4,7 @@ import 'package:code_gen/src/element/type_parameter_element.dart';
 import 'package:code_gen/src/element/variable_element.dart';
 import 'package:code_gen/src/type/dart_type.dart';
 import 'package:code_gen/src/type/function_type.dart';
+import 'package:code_gen/src/type/type_parameter_type.dart';
 import 'package:code_gen/src/util/parameter_element_util.dart';
 import 'package:meta/meta.dart';
 
@@ -62,15 +63,18 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
     /// todo: use annotation instead
     String annotationString = hasRequired ? '@required ' : '';
 
+    /// for function
     if (parameters.isNotEmpty) {
       return '$type $name(${ParameterElementUtil.generateParameter(parameters)})$defaultValueString';
     }
 
     if (type is FunctionType) {
-//      if ((type as FunctionType).typeParameters.isEmpty) {
       return '${(type as FunctionType).returnType} $name(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})$defaultValueString';
-//      }
 //      return '${(type as FunctionType).returnType} $name<${(type as FunctionType).typeParameters.join(', ')}>(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})';
+    }
+
+    if (type is TypeParameterType) {
+      return '$annotationString${type.name} $name$defaultValueString';
     }
 
     return '$annotationString$type $name$defaultValueString';

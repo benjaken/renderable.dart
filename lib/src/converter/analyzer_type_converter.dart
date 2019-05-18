@@ -2,6 +2,7 @@ import 'package:analyzer/dart/element/element.dart' as az;
 import 'package:analyzer/dart/element/type.dart' as az;
 import 'package:code_gen/code_gen.dart';
 import 'package:code_gen/src/converter/analyzer_import_loop_up.dart';
+import 'package:code_gen/src/type/type_parameter_type.dart';
 
 class AnalyzerTypeConverter {
   int id;
@@ -14,9 +15,11 @@ class AnalyzerTypeConverter {
     return InterfaceType(
       name: type.name,
       prefix: AnalyzerImportLoopUp.getPrefix(id, type.element.library.id),
-      typeArguments: type.typeArguments.map(parseDartType).toList(),
-      typeParameters:
-          type.typeParameters.map(analyzerElementConverter.parseTypeParameterElement).toList(),
+      typeArguments: type.typeArguments.map(parseDartType).where((e) => e != null).toList(),
+      typeParameters: type.typeParameters
+          .map(analyzerElementConverter.parseTypeParameterElement)
+          .where((e) => e != null)
+          .toList(),
     );
   }
 
@@ -24,24 +27,39 @@ class AnalyzerTypeConverter {
     return ParameterizedType(
       name: type.name,
       prefix: AnalyzerImportLoopUp.getPrefix(id, type.element.library.id),
-      typeArguments: type.typeArguments.map(parseDartType).toList(),
-      typeParameters:
-          type.typeParameters.map(analyzerElementConverter.parseTypeParameterElement).toList(),
+      typeArguments: type.typeArguments.map(parseDartType).where((e) => e != null).toList(),
+      typeParameters: type.typeParameters
+          .map(analyzerElementConverter.parseTypeParameterElement)
+          .where((e) => e != null)
+          .toList(),
     );
   }
 
   FunctionType parseFunctionType(az.FunctionType type) {
     return FunctionType(
       name: type.name,
-      parameters: type.parameters.map(analyzerElementConverter.parseParameter).toList(),
+      parameters: type.parameters
+          .map(analyzerElementConverter.parseParameter)
+          .where((e) => e != null)
+          .toList(),
       returnType: parseDartType(type.returnType),
-      typeParameters:
-          type.typeParameters.map(analyzerElementConverter.parseTypeParameterElement).toList(),
+      typeParameters: type.typeParameters
+          .map(analyzerElementConverter.parseTypeParameterElement)
+          .where((e) => e != null)
+          .toList(),
+    );
+  }
+
+  TypeParameterType parseTypeParameterType(az.TypeParameterType type) {
+    return TypeParameterType(
+      name: type.name,
+      bound: parseDartType(type.bound),
     );
   }
 
   DartType parseDartType(az.DartType type) {
     if (type == null) return null;
+//    if (type.isDynamic) return null;
 
     if (type is az.FunctionType) {
       return parseFunctionType(type);
@@ -56,7 +74,7 @@ class AnalyzerTypeConverter {
     }
 
     if (type is az.TypeParameterType) {
-      return null;
+      return parseTypeParameterType(type);
     }
 
     return DartType(

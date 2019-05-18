@@ -2,6 +2,7 @@ import 'package:code_gen/src/contract/renderable.dart';
 import 'package:code_gen/src/element/type_parameter_element.dart';
 import 'package:code_gen/src/type/dart_type.dart';
 import 'package:code_gen/src/type/parameterized_type.dart';
+import 'package:code_gen/src/type/type_parameter_type.dart';
 import 'package:meta/meta.dart';
 
 class InterfaceType extends Renderable implements ParameterizedType {
@@ -32,7 +33,11 @@ class InterfaceType extends Renderable implements ParameterizedType {
   }
 
   String _renderTypeArguments() {
-    return typeArguments.isEmpty ? '' : '<${typeArguments.join(', ')}>';
+    return typeArguments.isEmpty
+        ? ''
+        : '<${typeArguments.map((e) {
+            return e is TypeParameterType ? e.name : e.render();
+          }).join(', ')}>';
   }
 
   @override

@@ -9,12 +9,13 @@ abstract class Interface1 {}
 abstract class Interface2 {}
 
 @mirror
-class OriginClass implements Interface1, Interface2 {
+class OriginClass<A extends Object, B extends Map> implements Interface1, Interface2 {
   static int intField = 1;
 //  final List<int> listIntField = [1];
   Map<List<Future<int>>, int> nestedField = {};
   rx.Observable<int> prefixedField;
   rx.Observable<rx.Observable> nestedPrefixedField;
+  rx.Observable<A> field5;
 
   void method1(int a, int b) {}
 
@@ -29,4 +30,9 @@ class OriginClass implements Interface1, Interface2 {
     @required List<List<int>> b,
     String c = 'dv',
   }) async* {}
+
+  rx.Observable<dynamic> method5<E extends List>({
+    @required E b,
+    rx.Observable c,
+  }) {}
 }

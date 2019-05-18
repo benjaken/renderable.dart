@@ -12,7 +12,8 @@ abstract class Interface1 extends Object {}
 
 abstract class Interface2 extends Object {}
 
-class OriginClass extends Object implements Interface1, Interface2 {
+class OriginClass<A extends Object, B extends Map<dynamic, dynamic>>
+    extends Object implements Interface1, Interface2 {
   static int intField;
 
   Map<List<Future<int>>, int> nestedField;
@@ -20,6 +21,8 @@ class OriginClass extends Object implements Interface1, Interface2 {
   rx.Observable<int> prefixedField;
 
   rx.Observable<rx.Observable<dynamic>> nestedPrefixedField;
+
+  rx.Observable<A> field5;
 
   void method1(int a, int b) {}
 
@@ -30,4 +33,7 @@ class OriginClass extends Object implements Interface1, Interface2 {
 
   Stream<dynamic> method4(int a,
       {@required List<List<int>> b, String c = 'dv'}) async* {}
+
+  rx.Observable<dynamic> method5<E extends List<dynamic>>(
+      {@required E b, rx.Observable<dynamic> c}) {}
 }
