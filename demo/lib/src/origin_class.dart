@@ -9,11 +9,15 @@ abstract class Interface2 {}
 
 @mirror
 class OriginClass implements Interface1, Interface2 {
-//  static int intField = 1;
+  static int intField = 1;
 //  final List<int> listIntField = [1];
   Map<List<Future<int>>, int> nestedField = {};
   rx.Observable<int> prefixedField;
   rx.Observable<rx.Observable> nestedPrefixedField;
 
   void method1(int a, int b) {}
+
+  Future<rx.Observable> method2(int a, [int b(String c)]) async {
+    return null;
+  }
 }

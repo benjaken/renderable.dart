@@ -19,13 +19,9 @@ class AnalyzerElementConverter {
     List<String> shows = [];
     List<String> hides = [];
     import.combinators.forEach((e) {
-      if (e is az.ShowElementCombinator) {
-        shows.addAll(e.shownNames);
-      }
+      if (e is az.ShowElementCombinator) shows.addAll(e.shownNames);
 
-      if (e is az.HideElementCombinator) {
-        hides.addAll(e.hiddenNames);
-      }
+      if (e is az.HideElementCombinator) hides.addAll(e.hiddenNames);
     });
 
     return ImportElement(

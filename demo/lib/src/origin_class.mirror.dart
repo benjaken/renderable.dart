@@ -12,6 +12,8 @@ abstract class Interface1 extends Object {}
 abstract class Interface2 extends Object {}
 
 class OriginClass extends Object implements Interface1, Interface2 {
+  static int intField;
+
   Map<List<Future<int>>, int> nestedField;
 
   rx.Observable<int> prefixedField;
