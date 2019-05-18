@@ -10,15 +10,7 @@ A element-model-based analyzer-like Dart code generator.
         - [x] Basic field
         - [ ] Getter
         - [ ] Setter
-    - [ ] Method
-        - [x] Basic method
-        - [x] Generic type (Type parameter)
-        - [x] Statement body
-        - [ ] Parameter
-            - [x] Basic parameter
-            - [ ] Generic parameter
-            - [x] Different type parameter
-            - [x] Function parameter
+    - [x] Method
 - [ ] Function
 - [ ] Statement
 - [ ] Value
