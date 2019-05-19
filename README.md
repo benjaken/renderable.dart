@@ -26,7 +26,7 @@ C is Edition Version Number: changes on hotfix and code improvement
 - [ ] Miscellaneous
     - [ ] typedef
     - [ ] part / part of
-- [ ]Demo
+- [ ] Demo
     - [ ] class basic info
     - [ ] class field
     - [ ] class method
