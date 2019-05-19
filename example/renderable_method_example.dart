@@ -1,6 +1,6 @@
 import 'package:renderable/renderable.dart';
 import 'package:renderable/src/statement/addition_statement.dart';
-import 'package:renderable/src/statement/declaration_statement.dart';
+import 'package:renderable/src/statement/variable_declaration_statement.dart';
 import 'package:renderable/src/type/dart_type.dart';
 
 void main() {
@@ -18,17 +18,17 @@ void main() {
             returnType: InterfaceType(name: 'int'),
             body: FunctionBody(
               statements: [
-                DeclarationStatement(
+                VariableDeclarationStatement(
                   name: 'a',
                   type: DartType(name: 'int'),
                   value: IntValue(100),
                 ),
-                DeclarationStatement(
+                VariableDeclarationStatement(
                   name: 'b',
                   type: DartType(name: 'int'),
                   value: IntValue(33),
                 ),
-                DeclarationStatement(
+                VariableDeclarationStatement(
                   name: 'c',
                   type: DartType(name: 'int'),
                   value: AdditionStatement(

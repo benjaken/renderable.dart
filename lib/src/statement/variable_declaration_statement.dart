@@ -4,7 +4,7 @@ import 'package:renderable/src/element/variable_element.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:meta/meta.dart';
 
-class DeclarationStatement extends Statement implements VariableElement {
+class VariableDeclarationStatement extends Statement implements VariableElement {
   @override
   bool isConst;
 
@@ -25,7 +25,7 @@ class DeclarationStatement extends Statement implements VariableElement {
 
   Renderable value;
 
-  DeclarationStatement({
+  VariableDeclarationStatement({
     @required this.name,
     this.type,
     this.value,
