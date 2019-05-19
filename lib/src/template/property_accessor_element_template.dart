@@ -5,7 +5,7 @@ const String property_accessor_element_template = '''
 } 
 {{/isGetter}}
 {{#isSetter}}
-set {{{type}}} ({{#parameters}}{{{renderString}}}{{/parameters}}) {
+set {{{name}}}({{#parameters}}{{{renderString}}}{{/parameters}}) {
   
 } 
 {{/isSetter}}

@@ -10,6 +10,9 @@ class TypeParameterElement extends Renderable implements Element {
 
   DartType bound;
 
+  @override
+  bool isSynthetic;
+
   TypeParameterElement({
     @required this.name,
     this.bound,

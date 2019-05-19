@@ -11,7 +11,7 @@ const String class_field_element_accessor_template = '''
 } 
 {{/getter}}
 {{#setter}}
-set {{{setter.type}}} ({{#setter.parameters}}{{{renderString}}}{{/setter.parameters}}) {
+set {{{setter.name}}}({{#setter.parameters}}{{{renderString}}}{{/setter.parameters}}) {
   
 } 
 {{/setter}}

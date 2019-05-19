@@ -20,6 +20,9 @@ class DeclarationStatement extends Statement implements VariableElement {
   @override
   DartType type;
 
+  @override
+  bool isSynthetic;
+
   Renderable value;
 
   DeclarationStatement({

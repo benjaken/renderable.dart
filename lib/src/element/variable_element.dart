@@ -12,4 +12,7 @@ class VariableElement implements Element {
 
   @override
   String name;
+
+  @override
+  bool isSynthetic;
 }

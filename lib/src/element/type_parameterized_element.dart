@@ -12,6 +12,9 @@ class TypeParameterizedElement extends Renderable implements Element {
   String name;
 
   @override
+  bool isSynthetic;
+
+  @override
   String render() {
     if (typeParameters.isEmpty) {
       return type.render();

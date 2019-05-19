@@ -3,6 +3,7 @@ import 'package:analyzer/dart/element/type.dart' as az;
 import 'package:renderable/renderable.dart';
 import 'package:renderable/src/converter/analyzer_import_loop_up.dart';
 import 'package:renderable/src/converter/analyzer_type_converter.dart';
+import 'package:renderable/src/element/property_accessor_element.dart';
 
 class AnalyzerElementConverter {
   int id;
@@ -59,14 +60,16 @@ class AnalyzerElementConverter {
   }
 
   FieldElement parseFieldElement(az.FieldElement field) {
-//    field.getter
     return FieldElement(
       name: field.name,
       type: analyzerTypeConverter.parseDartType(field.type),
       isStatic: field.isStatic,
       isFinal: field.isFinal,
       isConst: field.isConst,
+      isSynthetic: field.isSynthetic,
       value: null,
+      getter: parsePropertyAccessorElement(field.getter),
+      setter: parsePropertyAccessorElement(field.getter),
     );
   }
 
@@ -96,6 +99,20 @@ class AnalyzerElementConverter {
       defaultValue: parameter.defaultValueCode,
       typeParameters: parameter.typeParameters.map(parseTypeParameterElement).toList(),
 //      parameters: parameter.parameters.map(parseParameter).toList(),
+    );
+  }
+
+  PropertyAccessorElement parsePropertyAccessorElement(az.PropertyAccessorElement accessor) {
+    print(accessor.isSynthetic);
+    return PropertyAccessorElement(
+      name: accessor.name,
+      isGetter: accessor.isGetter,
+      isSetter: accessor.isSetter,
+      isStatic: accessor.isSetter,
+      parameters: accessor.parameters.map(parseParameter).toList(),
+      type: analyzerTypeConverter.parseDartType(accessor.type),
+      returnType: analyzerTypeConverter.parseDartType(accessor.returnType),
+//      typeParameters: accessor.typeParameters.map(parseTypeParameterElement).toList(),
     );
   }
 }

@@ -50,6 +50,9 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
   @override
   List<TypeParameterElement> typeParameters;
 
+  @override
+  bool isSynthetic;
+
   PropertyAccessorElement({
     @required this.name,
     this.isGetter = false,
@@ -57,6 +60,7 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
     this.isStatic = false,
     this.parameters,
     this.returnType,
+    this.type,
     this.typeParameters,
   }) {
     parameters ??= [];

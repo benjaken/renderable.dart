@@ -32,13 +32,19 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
   @override
   PropertyAccessorElement setter;
 
+  @override
+  bool isSynthetic;
+
   FieldElement({
     @required this.name,
     this.isStatic = false,
     this.isConst = false,
     this.isFinal = false,
+    this.isSynthetic = false,
     this.type,
     this.value,
+    this.getter,
+    this.setter,
   }) {
     this.type ??= InterfaceType(name: 'dynamic');
   }
@@ -49,7 +55,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     assert(!isFinal || !isConst, 'Members can\'t be declared to be both final and const');
     assert((isConst && isStatic) || (!isConst), 'Only static fields can be declared as const');
 
-    if (getter != null || setter != null) {
+    if (isSynthetic) {
       return mu.render(class_field_element_accessor_template, this);
     }
 

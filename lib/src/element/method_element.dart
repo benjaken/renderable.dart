@@ -46,6 +46,9 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
   @override
   ParameterizedType type = null;
 
+  @override
+  bool isSynthetic;
+
   MethodElement({
     @required this.name,
     this.returnType,

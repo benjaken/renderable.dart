@@ -33,6 +33,9 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
   @override
   ParameterizedType type;
 
+  @override
+  bool isSynthetic;
+
   ClassElement({
     this.name,
     this.supertype,

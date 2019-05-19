@@ -38,6 +38,9 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
   @override
   DartType type;
 
+  @override
+  bool isSynthetic;
+
   ParameterElement({
     @required this.name,
     this.type,
