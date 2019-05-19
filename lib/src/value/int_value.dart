@@ -4,9 +4,7 @@ import 'package:meta/meta.dart';
 class IntValue extends Value {
   int value;
 
-  IntValue({
-    @required this.value,
-  });
+  IntValue(this.value);
 
   @override
   String render() {

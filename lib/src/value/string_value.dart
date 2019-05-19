@@ -4,9 +4,7 @@ import 'package:renderable/src/contract/renderable.dart';
 class StringValue extends Renderable {
   String value;
 
-  StringValue({
-    @required this.value,
-  });
+  StringValue(this.value);
 
   @override
   String render() {

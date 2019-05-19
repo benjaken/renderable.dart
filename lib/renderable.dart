@@ -25,11 +25,13 @@ export 'src/statement/return_statement.dart';
 export 'src/value/bool_value.dart';
 export 'src/value/double_value.dart';
 export 'src/value/int_value.dart';
-export 'src/value/map_value.dart';
 export 'src/value/num_value.dart';
 export 'src/value/raw_value.dart';
 export 'src/value/string_value.dart';
 export 'src/value/variable.dart';
+export 'src/value/null_value.dart';
+export 'src/value/list_value.dart';
+export 'src/value/map_value.dart';
 
 /// util
 export 'package:renderable/src/converter/analyzer_element_converter.dart';

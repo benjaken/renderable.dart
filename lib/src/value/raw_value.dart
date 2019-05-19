@@ -5,9 +5,7 @@ import 'package:renderable/src/contract/value.dart';
 class RawValue extends Renderable implements Value {
   Object value;
 
-  RawValue({
-    @required this.value,
-  });
+  RawValue(this.value);
 
   @override
   String render() {

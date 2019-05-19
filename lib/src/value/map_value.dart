@@ -5,9 +5,7 @@ import 'package:renderable/src/contract/value.dart';
 class MapValue extends Renderable implements Value {
   Map<Renderable, Renderable> value;
 
-  MapValue({
-    @required this.value,
-  });
+  MapValue(this.value);
 
   @override
   String render() {

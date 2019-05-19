@@ -5,9 +5,7 @@ import 'package:renderable/src/contract/value.dart';
 class NumValue extends Renderable implements Value {
   num value;
 
-  NumValue({
-    @required this.value,
-  });
+  NumValue(this.value);
 
   @override
   String render() {

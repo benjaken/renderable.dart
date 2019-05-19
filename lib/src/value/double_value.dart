@@ -5,9 +5,7 @@ import 'package:renderable/src/contract/value.dart';
 class DoubleValue extends Renderable implements Value {
   double value;
 
-  DoubleValue({
-    @required this.value,
-  });
+  DoubleValue(this.value);
 
   @override
   String render() {

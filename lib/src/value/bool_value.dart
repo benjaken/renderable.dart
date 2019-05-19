@@ -5,15 +5,13 @@ import 'package:renderable/src/contract/value.dart';
 class BoolValue extends Renderable implements Value {
   bool value;
 
-  BoolValue({
-    @required this.value,
-  });
+  BoolValue(this.value);
 
   @override
   String render() {
     return value.toString();
   }
 
-  static final bool False = false;
-  static final bool True = true;
+  static final BoolValue False = BoolValue(false);
+  static final BoolValue True = BoolValue(true);
 }
