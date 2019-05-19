@@ -1,24 +1,23 @@
 import '../misc/some_file.dart' as sf;
 
-class CodeGenFieldExample {
-    dynamic simpleField;
+class RenderableFieldExample {
+  dynamic simpleField;
 
-    final dynamic finalField = 1;
+  final dynamic finalField = 1;
 
-    static const dynamic staticConstField = 1;
+  static const dynamic staticConstField = 1;
 
-    static dynamic staticField;
+  static dynamic staticField;
 
-    static final dynamic staticFinalField = 1;
+  static final dynamic staticFinalField = 1;
 
-    Object typedField;
+  Object typedField;
 
-    sf.SomeFile classTypedField;
+  sf.SomeFile classTypedField;
 
-    static final sf.SomeFile staticFinalClassTypedField = sf.SomeFile();
+  static final sf.SomeFile staticFinalClassTypedField = sf.SomeFile();
 
-    static final sf.SomeFile<String, sf.SomeFile2> simpleGenericField = sf.SomeFile();
+  static final sf.SomeFile<String, sf.SomeFile2> simpleGenericField = sf.SomeFile();
 
-    static final sf.SomeFile<Map<List<double>, int>, String> complexGenericField = sf.SomeFile();
-
+  static final sf.SomeFile<Map<List<double>, int>, String> complexGenericField = sf.SomeFile();
 }

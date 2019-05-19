@@ -8,7 +8,7 @@ void main() {
     ],
     renders: [
       ClassElement(
-        name: 'CodeGenFieldExample',
+        name: 'RenderableFieldExample',
         fields: [
           FieldElement(name: 'simpleField'),
           FieldElement(

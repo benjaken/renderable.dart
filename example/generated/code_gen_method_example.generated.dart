@@ -1,56 +1,30 @@
+class RenderableMethodExample {
+  dynamic defaultMethod() {}
 
+  int basicMethod() {
+    int a = 100;
+    int b = 33;
+    int c = a + b;
+    return c;
+  }
 
-class CodeGenMethodExample {
+  static String staticMethod() {}
 
-    dynamic defaultMethod() {
-      
-    }
+  static Future<String> staticAsyncMethod() async {}
 
-    int basicMethod() {
-      int a = 100;
-int b = 33;
-int c = a + b;
-return c;
-    }
+  Iterable<String> syncGeneratorMethod() sync* {}
 
-    static String staticMethod() {
-      
-    }
+  Stream<String> asyncGeneratorMethod() async* {}
 
-    static Future<String> staticAsyncMethod() async {
-      
-    }
+  Stream<List<int>> returnGenericValueMethod() {}
 
-    Iterable<String> syncGeneratorMethod() sync* {
-      
-    }
+  void genericMethod<T, R extends List>() {}
 
-    Stream<String> asyncGeneratorMethod() async* {
-      
-    }
+  void parametersMethod(int a, int b, {int c, int d}) {}
 
-    Stream<List<int>> returnGenericValueMethod() {
-      
-    }
+  void parametersMethod2(int a, int b, [int c, int d]) {}
 
-    void genericMethod<T, R extends List>() {
-      
-    }
+  void genericParameterMethod([List<int> a]) {}
 
-    void parametersMethod(int a, int b, {int c, int d}) {
-      
-    }
-
-    void parametersMethod2(int a, int b, [int c, int d]) {
-      
-    }
-
-    void genericParameterMethod([List<int> a]) {
-      
-    }
-
-    void functionParameterMethod(List<int> a(double d)) {
-      
-    }
-
+  void functionParameterMethod(List<int> a(double d)) {}
 }

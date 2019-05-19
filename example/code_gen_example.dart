@@ -8,27 +8,27 @@ main() {
     filePath: 'example/generated/renderable_example.generated.dart',
     renders: [
       ClassElement(
-        name: 'CodeGenExampleInterface1',
+        name: 'RenderableExampleInterface1',
         isAbstract: true,
       ),
       ClassElement(
-        name: 'CodeGenExampleInterface2',
+        name: 'RenderableExampleInterface2',
         isAbstract: true,
       ),
       ClassElement(
-        name: 'CodeGenExampleInterface3',
+        name: 'RenderableExampleInterface3',
         isAbstract: true,
       ),
       ClassElement(
-        name: 'CodeGenExampleBase',
+        name: 'RenderableExampleBase',
       ),
       ClassElement(
-        name: 'CodeGenExample',
-        supertype: InterfaceType(name: 'CodeGenExampleBase'),
+        name: 'RenderableExample',
+        supertype: InterfaceType(name: 'RenderableExampleBase'),
         interfaces: [
-          InterfaceType(name: 'CodeGenExampleInterface1'),
-          InterfaceType(name: 'CodeGenExampleInterface2'),
-          InterfaceType(name: 'CodeGenExampleInterface3'),
+          InterfaceType(name: 'RenderableExampleInterface1'),
+          InterfaceType(name: 'RenderableExampleInterface2'),
+          InterfaceType(name: 'RenderableExampleInterface3'),
         ],
         fields: [
           FieldElement(

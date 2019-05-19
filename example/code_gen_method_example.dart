@@ -8,7 +8,7 @@ void main() {
     filePath: 'example/generated/renderable_method_example.generated.dart',
     renders: [
       ClassElement(
-        name: 'CodeGenMethodExample',
+        name: 'RenderableMethodExample',
         methods: [
           MethodElement(
             name: 'defaultMethod',
