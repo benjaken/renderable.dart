@@ -19,7 +19,7 @@ C is Edition Version Number: changes on hotfix and code improvement
     - [x] variable declaration
     - [x] assignment
     - [x] compound assignment
-    - [ ] basic math (+, -, *, /, %, ~/)
+    - [ ] basic math (+, -, *, /, %)
     - [ ] more...
 - [x] Value
 - [ ] SubClass
