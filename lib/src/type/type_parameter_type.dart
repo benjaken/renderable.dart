@@ -15,9 +15,9 @@ class TypeParameterType extends Renderable implements DartType {
 
   @override
   String render() {
-    if (bound != null) {
-      return '$name extends $bound';
-    }
+//    if (bound != null) {
+//      return '$name extends $bound';
+//    }
     return name;
   }
 }

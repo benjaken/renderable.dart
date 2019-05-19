@@ -5,14 +5,14 @@ const String class_field_element_template = '''
 ''';
 
 const String class_field_element_accessor_template = '''
-{{#getter}}
-{{{getter.returnType}}} get {{{getter.name}}} {
-  
-} 
-{{/getter}}
-{{#setter}}
-set {{{setter.name}}}({{#setter.parameters}}{{{renderString}}}{{/setter.parameters}}) {
-  
-} 
-{{/setter}}
+    {{#getter}}
+    {{{getter.returnType}}} get {{{getter.name}}} {
+      
+    } 
+    {{/getter}}
+    {{#setter}}
+    set {{{setter.name}}}({{#setter.parameters}}{{{renderString}}}{{/setter.parameters}}) {
+      
+    } 
+    {{/setter}}
 ''';

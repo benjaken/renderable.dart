@@ -69,7 +69,7 @@ class AnalyzerElementConverter {
       isSynthetic: field.isSynthetic,
       value: null,
       getter: parsePropertyAccessorElement(field.getter),
-      setter: parsePropertyAccessorElement(field.getter),
+      setter: parsePropertyAccessorElement(field.setter),
     );
   }
 
@@ -103,9 +103,10 @@ class AnalyzerElementConverter {
   }
 
   PropertyAccessorElement parsePropertyAccessorElement(az.PropertyAccessorElement accessor) {
-    print(accessor.isSynthetic);
+    if (accessor == null) return null;
+
     return PropertyAccessorElement(
-      name: accessor.name,
+      name: accessor.displayName,
       isGetter: accessor.isGetter,
       isSetter: accessor.isSetter,
       isStatic: accessor.isSetter,
