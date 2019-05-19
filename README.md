@@ -15,13 +15,7 @@ C is Edition Version Number: changes on hotfix and code improvement
 ### RoadMap
 - [x] File
 - [x] Import
-- [ ] Class
-    - [x] Basic info
-    - [ ] Field
-        - [x] Basic field
-        - [ ] Getter
-        - [ ] Setter
-    - [x] Method
+- [x] Class
 - [ ] Function
 - [ ] Statement
 - [ ] Value
