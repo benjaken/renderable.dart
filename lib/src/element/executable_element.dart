@@ -1,4 +1,4 @@
-import 'package:code_gen/src/element/function_typed_element.dart';
+import 'package:renderable/src/element/function_typed_element.dart';
 
 abstract class ExecutableElement implements FunctionTypedElement {
   /// true if this executable element is abstract. Executable elements are abstract if they are not external and have no body.

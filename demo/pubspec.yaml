@@ -8,7 +8,7 @@ environment:
   sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
-  code_gen:
+  renderable:
     path: ../../code_gen
   analyzer: any
   build: any

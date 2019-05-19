@@ -1,11 +1,11 @@
-import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/element/field_element.dart';
-import 'package:code_gen/src/element/method_element.dart';
-import 'package:code_gen/src/element/type_parameter_element.dart';
-import 'package:code_gen/src/element/type_parameterized_element.dart';
-import 'package:code_gen/src/template/class_element_template.dart';
-import 'package:code_gen/src/type/interface_type.dart';
-import 'package:code_gen/src/type/parameterized_type.dart';
+import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/element/field_element.dart';
+import 'package:renderable/src/element/method_element.dart';
+import 'package:renderable/src/element/type_parameter_element.dart';
+import 'package:renderable/src/element/type_parameterized_element.dart';
+import 'package:renderable/src/template/class_element_template.dart';
+import 'package:renderable/src/type/interface_type.dart';
+import 'package:renderable/src/type/parameterized_type.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 
 class ClassElement extends Renderable implements TypeParameterizedElement {

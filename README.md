@@ -33,7 +33,7 @@ C is Edition Version Number: changes on hotfix and code improvement
 let's create a simple class named 'HelloWorld'.
 
 ```dart
-import 'package:code_gen/code_gen.dart';
+import 'package:renderable/renderable.dart';
 
 void main() {
   FileElement(

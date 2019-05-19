@@ -3,7 +3,7 @@ import 'package:analyzer/dart/element/type.dart' as az;
 import 'package:build/build.dart';
 import 'package:demo/annotation/mirror.dart';
 import 'package:source_gen/source_gen.dart';
-import 'package:code_gen/code_gen.dart';
+import 'package:renderable/renderable.dart';
 
 class MirrorGenerator extends GeneratorForAnnotation<Mirror> {
   static Map<String, bool> firstCheck = {};

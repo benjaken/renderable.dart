@@ -1,8 +1,8 @@
 import 'package:analyzer/dart/element/element.dart' as az;
 import 'package:analyzer/dart/element/type.dart' as az;
-import 'package:code_gen/code_gen.dart';
-import 'package:code_gen/src/converter/analyzer_import_loop_up.dart';
-import 'package:code_gen/src/converter/analyzer_type_converter.dart';
+import 'package:renderable/renderable.dart';
+import 'package:renderable/src/converter/analyzer_import_loop_up.dart';
+import 'package:renderable/src/converter/analyzer_type_converter.dart';
 
 class AnalyzerElementConverter {
   int id;
@@ -45,7 +45,7 @@ class AnalyzerElementConverter {
       interfaces: element.interfaces.map(analyzerTypeConverter.parseInterfaceType).toList(),
       typeParameters: element.typeParameters.map(parseTypeParameterElement).toList(),
       fields: element.fields.map(parseFieldElement).toList(),
-      methods: element.methods.map(parseMethod).toList(),
+      methods: element.methods.map(parseMethodElement).toList(),
     );
   }
 
@@ -59,6 +59,7 @@ class AnalyzerElementConverter {
   }
 
   FieldElement parseFieldElement(az.FieldElement field) {
+//    field.getter
     return FieldElement(
       name: field.name,
       type: analyzerTypeConverter.parseDartType(field.type),
@@ -69,7 +70,7 @@ class AnalyzerElementConverter {
     );
   }
 
-  MethodElement parseMethod(az.MethodElement method) {
+  MethodElement parseMethodElement(az.MethodElement method) {
     return MethodElement(
       isAbstract: method.isAbstract,
       isAsynchronous: method.isAsynchronous,

@@ -1,5 +1,5 @@
-import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/template/import_element_template.dart';
+import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/template/import_element_template.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 

@@ -1,11 +1,11 @@
-import 'package:code_gen/code_gen.dart';
-import 'package:code_gen/src/statement/addition_statement.dart';
-import 'package:code_gen/src/statement/declaration_statement.dart';
-import 'package:code_gen/src/type/dart_type.dart';
+import 'package:renderable/renderable.dart';
+import 'package:renderable/src/statement/addition_statement.dart';
+import 'package:renderable/src/statement/declaration_statement.dart';
+import 'package:renderable/src/type/dart_type.dart';
 
 void main() {
   FileElement(
-    filePath: 'example/generated/code_gen_method_example.generated.dart',
+    filePath: 'example/generated/renderable_method_example.generated.dart',
     renders: [
       ClassElement(
         name: 'CodeGenMethodExample',

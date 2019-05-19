@@ -1,4 +1,4 @@
-import 'package:code_gen/src/template/shared_template.dart';
+import 'package:renderable/src/template/shared_template.dart';
 
 const String class_element_template = '''
 ${abstract_template}class {{{name}}}{{{typeParametersString}}}$supertype_template{{{interfacesString}}} {

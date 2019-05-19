@@ -1,8 +1,8 @@
-import 'package:code_gen/code_gen.dart';
+import 'package:renderable/renderable.dart';
 
 void main() {
   FileElement(
-    filePath: 'example/generated/code_gen_import_example.generated.dart',
+    filePath: 'example/generated/renderable_import_example.generated.dart',
     imports: [
       ImportElement(path: '../misc/some_file.dart'),
       ImportElement(path: '../misc/some_file.dart', prefix: 'sf'),

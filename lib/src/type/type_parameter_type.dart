@@ -1,5 +1,5 @@
-import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/type/dart_type.dart';
+import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/type/dart_type.dart';
 import 'package:meta/meta.dart';
 
 class TypeParameterType extends Renderable implements DartType {

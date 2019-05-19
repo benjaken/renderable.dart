@@ -1,4 +1,4 @@
-import 'package:code_gen/src/contract/value.dart';
+import 'package:renderable/src/contract/value.dart';
 import 'package:meta/meta.dart';
 
 class Variable extends Value {

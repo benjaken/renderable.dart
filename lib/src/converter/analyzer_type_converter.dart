@@ -1,8 +1,8 @@
 import 'package:analyzer/dart/element/element.dart' as az;
 import 'package:analyzer/dart/element/type.dart' as az;
-import 'package:code_gen/code_gen.dart';
-import 'package:code_gen/src/converter/analyzer_import_loop_up.dart';
-import 'package:code_gen/src/type/type_parameter_type.dart';
+import 'package:renderable/renderable.dart';
+import 'package:renderable/src/converter/analyzer_import_loop_up.dart';
+import 'package:renderable/src/type/type_parameter_type.dart';
 
 class AnalyzerTypeConverter {
   int id;

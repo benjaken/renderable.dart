@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:code_gen/code_gen.dart';
-import 'package:code_gen/src/element/file_element.dart';
+import 'package:renderable/renderable.dart';
+import 'package:renderable/src/element/file_element.dart';
 
 main() {
   FileElement(
-    filePath: 'example/generated/code_gen_example.generated.dart',
+    filePath: 'example/generated/renderable_example.generated.dart',
     renders: [
       ClassElement(
         name: 'CodeGenExampleInterface1',

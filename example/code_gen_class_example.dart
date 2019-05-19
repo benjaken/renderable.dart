@@ -1,8 +1,8 @@
-import 'package:code_gen/code_gen.dart';
+import 'package:renderable/renderable.dart';
 
 void main() {
   FileElement(
-    filePath: 'example/generated/code_gen_class_example.generated.dart',
+    filePath: 'example/generated/renderable_class_example.generated.dart',
     renders: [
       ClassElement(
         name: 'ClassExample1',

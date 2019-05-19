@@ -1,9 +1,9 @@
-import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/element/parameter_element.dart';
-import 'package:code_gen/src/element/type_parameter_element.dart';
-import 'package:code_gen/src/type/dart_type.dart';
-import 'package:code_gen/src/type/parameterized_type.dart';
-import 'package:code_gen/src/util/parameter_element_util.dart';
+import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/element/parameter_element.dart';
+import 'package:renderable/src/element/type_parameter_element.dart';
+import 'package:renderable/src/type/dart_type.dart';
+import 'package:renderable/src/type/parameterized_type.dart';
+import 'package:renderable/src/util/parameter_element_util.dart';
 
 class FunctionType extends Renderable implements ParameterizedType {
   List<ParameterElement> parameters;

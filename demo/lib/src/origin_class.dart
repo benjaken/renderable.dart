@@ -17,6 +17,8 @@ class OriginClass<A extends Object, B extends Map> implements Interface1, Interf
   rx.Observable<rx.Observable> nestedPrefixedField;
   rx.Observable<A> field5;
 
+  int get getter1 => 1;
+
   void method1(int a, int b) {}
 
   Future<rx.Observable> method2(int a, [int b(String c)]) async {

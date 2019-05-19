@@ -1,5 +1,5 @@
-import 'package:code_gen/code_gen.dart';
-import 'package:code_gen/src/type/interface_type.dart';
+import 'package:renderable/renderable.dart';
+import 'package:renderable/src/type/interface_type.dart';
 
 class TemplateUtil {
   static InterfaceType wrapTypeArguments(

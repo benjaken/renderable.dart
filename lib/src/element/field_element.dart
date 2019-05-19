@@ -1,13 +1,16 @@
-import 'package:code_gen/src/contract/renderable.dart';
-import 'package:code_gen/src/element/class_member_element.dart';
-import 'package:code_gen/src/element/property_including_element.dart';
-import 'package:code_gen/src/template/class_field_element_template.dart';
-import 'package:code_gen/src/type/dart_type.dart';
-import 'package:code_gen/src/type/interface_type.dart';
+import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/element/class_member_element.dart';
+import 'package:renderable/src/element/property_accessor_element.dart';
+import 'package:renderable/src/element/property_inclucing_element.dart';
+import 'package:renderable/src/template/class_field_element_template.dart';
+import 'package:renderable/src/type/dart_type.dart';
+import 'package:renderable/src/type/interface_type.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 
-class FieldElement extends Renderable implements PropertyIncludingElement, ClassMemberElement {
+class FieldElement extends Renderable implements PropertyInclucingElement, ClassMemberElement {
+  Renderable value;
+
   @override
   String name;
 
@@ -23,7 +26,11 @@ class FieldElement extends Renderable implements PropertyIncludingElement, Class
   @override
   DartType type;
 
-  Renderable value;
+  @override
+  PropertyAccessorElement getter;
+
+  @override
+  PropertyAccessorElement setter;
 
   FieldElement({
     @required this.name,
@@ -42,9 +49,10 @@ class FieldElement extends Renderable implements PropertyIncludingElement, Class
     assert(!isFinal || !isConst, 'Members can\'t be declared to be both final and const');
     assert((isConst && isStatic) || (!isConst), 'Only static fields can be declared as const');
 
-    return mu.render(
-      class_field_element_template,
-      this,
-    );
+    if (getter != null || setter != null) {
+      return mu.render(class_field_element_accessor_template, this);
+    }
+
+    return mu.render(class_field_element_template, this);
   }
 }
