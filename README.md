@@ -15,8 +15,17 @@ C is Edition Version Number: changes on hotfix and code improvement
 - [x] Class
 - [ ] Function
 - [ ] Statement
+    - [ ] raw statement
+    - [ ] variable declaration
+    - [ ] variable assignment
+    - [ ] variable optional assignment
+    - [ ] basic math (+, -, *, /, %, ~/)
+    - [ ] more...
 - [x] Value
 - [ ] SubClass
+- [ ] Miscellaneous
+    - [ ] typedef
+    - [ ] part / part of
 
 ### Quick Start
 
