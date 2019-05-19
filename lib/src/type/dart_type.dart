@@ -13,12 +13,12 @@ class DartType extends Renderable {
     return name;
   }
 
-//  static DartType dynamic = DartType(name: 'dynamic');
-//  static DartType int = DartType(name: 'int');
-//  static DartType double = DartType(name: 'double');
-//  static DartType num = DartType(name: 'num');
-//  static DartType String = DartType(name: 'String');
-//  static DartType Object = DartType(name: 'Object');
-//  static DartType List = DartType(name: 'List');
-//  static DartType Map = DartType(name: 'Map');
+  static DartType dynamic = DartType(name: 'dynamic');
+  static DartType int = DartType(name: 'int');
+  static DartType double = DartType(name: 'double');
+  static DartType num = DartType(name: 'num');
+  static DartType string = DartType(name: 'String');
+  static DartType object = DartType(name: 'Object');
+  static DartType list = DartType(name: 'List');
+  static DartType map = DartType(name: 'Map');
 }
