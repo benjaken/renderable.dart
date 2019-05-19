@@ -1,4 +1,4 @@
-library code_gen;
+library renderable;
 
 export 'src/element/file_element.dart';
 export 'src/element/import_element.dart';
