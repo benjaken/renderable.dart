@@ -1,8 +1,8 @@
-name: code_gen
-description: A starting point for Dart libraries or applications.
-# version: 1.0.0
-# homepage: https://www.example.com
-# author: shallow <email@example.com>
+name: renderable
+description: An element-model-based Dart code generator. CodeGen's AnalyzerConverter can convert SourceGen code to CodeGen code by calling one method.
+version: 0.0.0
+homepage: https://github.com/copydog/code_gen.dart
+author: copydog <188166004@qq.com>
 
 environment:
   sdk: '>=2.0.0 <3.0.0'
