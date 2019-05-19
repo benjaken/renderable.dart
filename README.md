@@ -15,7 +15,7 @@ C is Edition Version Number: changes on hotfix and code improvement
 - [x] Class
 - [ ] Function
 - [ ] Statement
-- [ ] Value
+- [x] Value
 - [ ] SubClass
 
 ### Quick Start
