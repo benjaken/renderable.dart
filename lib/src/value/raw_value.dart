@@ -3,7 +3,7 @@ import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/contract/value.dart';
 
 class RawValue extends Renderable implements Value {
-  Object value;
+  String value;
 
   RawValue(this.value);
 
