@@ -2,9 +2,6 @@
 An element-model-based Dart code generator. 
 Renderable's AnalyzerConverter can convert SourceGen code to Renderable code by calling one method.
 
-### Updates
-First version will release when ClassElement is finished
-
 ### Version Number
 A.B.C
 
