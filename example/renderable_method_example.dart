@@ -21,12 +21,12 @@ void main() {
                 DeclarationStatement(
                   name: 'a',
                   type: DartType(name: 'int'),
-                  value: IntValue(value: 100),
+                  value: IntValue(100),
                 ),
                 DeclarationStatement(
                   name: 'b',
                   type: DartType(name: 'int'),
-                  value: IntValue(value: 33),
+                  value: IntValue(33),
                 ),
                 DeclarationStatement(
                   name: 'c',
