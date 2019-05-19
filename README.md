@@ -15,10 +15,10 @@ C is Edition Version Number: changes on hotfix and code improvement
 - [x] Class
 - [ ] Function
 - [ ] Statement
-    - [ ] raw statement
-    - [ ] variable declaration
-    - [ ] variable assignment
-    - [ ] variable optional assignment
+    - [x] raw statement
+    - [x] variable declaration
+    - [x] assignment
+    - [x] compound assignment
     - [ ] basic math (+, -, *, /, %, ~/)
     - [ ] more...
 - [x] Value

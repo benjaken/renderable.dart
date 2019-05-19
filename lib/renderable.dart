@@ -1,5 +1,9 @@
 library renderable;
 
+/// constant
+export 'src/constant/compound_assignment_operator.dart';
+
+/// element
 export 'src/element/file_element.dart';
 export 'src/element/import_element.dart';
 export 'src/element/class_element.dart';
@@ -19,7 +23,11 @@ export 'src/type/parameterized_type.dart';
 export 'src/misc/function_body.dart';
 
 /// statement
+export 'src/statement/raw_statement.dart';
 export 'src/statement/return_statement.dart';
+export 'src/statement/variable_declaration_statement.dart';
+export 'src/statement/assignment_statement.dart';
+export 'src/statement/compound_assignment_statement.dart';
 
 /// value
 export 'src/value/bool_value.dart';
