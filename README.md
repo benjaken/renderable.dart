@@ -2,13 +2,6 @@
 An element-model-based Dart code generator. 
 Renderable's AnalyzerConverter can convert SourceGen code to Renderable code by calling one method.
 
-### Version Number
-A.B.C
-
-A is Master Version Number: changes when large breaking change happens
-B is Feature Version Number: changes when new feature comes out
-C is Edition Version Number: changes on hotfix and code improvement
-
 ### RoadMap
 - [x] File
 - [x] Import
