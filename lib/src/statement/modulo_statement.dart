@@ -2,15 +2,15 @@ import 'package:meta/meta.dart';
 import 'package:renderable/src/contract/statement.dart';
 import 'package:renderable/src/contract/value.dart';
 
-class AdditionStatement extends Statement {
+class ModuloStatement extends Statement {
   List<Value> values;
 
-  AdditionStatement({
+  ModuloStatement({
     @required this.values,
   });
 
   @override
   String render() {
-    return values.join(' + ');
+    return values.join(' % ');
   }
 }

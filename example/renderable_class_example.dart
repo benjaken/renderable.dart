@@ -39,7 +39,7 @@ void main() {
           InterfaceType(name: 'ClassExample4'),
         ],
         typeParameters: [
-          TypeParameterElement(name: 'T'),
+          TypeParameterElement(name: 'T', bound: DartType.map),
           TypeParameterElement(name: 'S'),
         ],
       ),
