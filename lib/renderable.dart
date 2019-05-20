@@ -6,6 +6,7 @@ export 'src/constant/compound_assignment_operator.dart';
 /// element
 export 'src/element/file_element.dart';
 export 'src/element/import_element.dart';
+export 'src/element/function_element.dart';
 export 'src/element/class_element.dart';
 export 'src/element/field_element.dart';
 export 'src/element/method_element.dart';

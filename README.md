@@ -13,7 +13,13 @@ Renderable's AnalyzerConverter can convert SourceGen code to Renderable code by 
     - [x] assignment
     - [x] compound assignment
     - [x] basic math (+, -, *, /, %)
-    - [ ] more...
+    - [ ] if/else/switch/case condition statement
+    - [ ] for/while loop statement
+    - [ ] type test
+    - [ ] relational operator
+    - [ ] logic operator
+    - [ ] bitwise and shift operators
+    - [ ] other
 - [x] Value
 - [ ] SubClass
 - [ ] Miscellaneous
