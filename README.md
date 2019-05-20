@@ -27,14 +27,14 @@ C is Edition Version Number: changes on hotfix and code improvement
     - [ ] typedef
     - [ ] part / part of
 - [ ] Demo
-    - [ ] class basic info
-    - [ ] class field
-    - [ ] class method
+    - [x] class basic info
+    - [x] class field
+    - [x] class method
     - [ ] class getter
     - [ ] class setter
     - [ ] function
-    - [ ] statement
-    - [ ] value
+    - [x] statement
+    - [x] value
     - [ ] subclass
     - [ ] misc
 
