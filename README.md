@@ -6,7 +6,7 @@ Renderable's AnalyzerConverter can convert SourceGen code to Renderable code by 
 - [x] File
 - [x] Import
 - [x] Class
-- [ ] Function
+- [x] Function
 - [ ] Statement
     - [x] raw statement
     - [x] variable declaration
