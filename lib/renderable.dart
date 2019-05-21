@@ -59,5 +59,7 @@ export 'src/value/map_value.dart';
 
 /// util
 export 'package:renderable/src/converter/analyzer_element_converter.dart';
+export 'package:renderable/src/converter/analyzer_import_loop_up.dart';
+export 'package:renderable/src/converter/analyzer_type_converter.dart';
 export 'package:renderable/src/util/parameter_element_util.dart';
 export 'package:renderable/src/util/template_util.dart';

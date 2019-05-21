@@ -81,4 +81,11 @@ class AnalyzerTypeConverter {
       name: type.name,
     );
   }
+
+  static TypeParameterType parseTypeArgumentFromTypeParameter(TypeParameterElement element) {
+    return TypeParameterType(
+      name: element.name,
+      bound: element.bound,
+    );
+  }
 }
