@@ -3,6 +3,7 @@ import 'package:renderable/src/element/executable_element.dart';
 import 'package:renderable/src/element/parameter_element.dart';
 import 'package:renderable/src/element/property_inclucing_element.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
+import 'package:renderable/src/misc/function_body.dart';
 import 'package:renderable/src/template/property_accessor_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/parameterized_type.dart';
@@ -19,6 +20,8 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
   PropertyAccessorElement correspondingSetter;
 
   PropertyInclucingElement variable;
+
+  FunctionBody body;
 
   @override
   bool isAbstract = false;
