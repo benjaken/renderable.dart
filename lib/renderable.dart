@@ -16,6 +16,7 @@ export 'src/element/function_element.dart';
 export 'src/element/class_element.dart';
 export 'src/element/field_element.dart';
 export 'src/element/method_element.dart';
+export 'src/element/property_accessor_element.dart';
 export 'src/element/type_parameter_element.dart';
 export 'src/element/parameter_element.dart';
 export 'src/element/raw_element.dart';
