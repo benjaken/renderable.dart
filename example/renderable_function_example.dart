@@ -40,6 +40,47 @@ void main() {
           ],
         ),
       ),
+      FunctionElement(
+        name: 'main3',
+        returnType: DartType.dynamic,
+        isAsynchronous: true,
+        isGenerator: true,
+        body: FunctionBody(
+          statements: [
+            VariableDeclarationStatement(
+              name: 'tmp',
+              type: DartType.int,
+            ),
+          ],
+        ),
+      ),
+      FunctionElement(
+        name: 'main4',
+        returnType: DartType.dynamic,
+        isAsynchronous: false,
+        isGenerator: true,
+        body: FunctionBody(
+          statements: [
+            VariableDeclarationStatement(
+              name: 'tmp',
+              type: DartType.int,
+            ),
+          ],
+        ),
+      ),
+      FunctionElement(
+        name: 'main5',
+        returnType: DartType.dynamic,
+        isAsynchronous: true,
+        body: FunctionBody(
+          statements: [
+            VariableDeclarationStatement(
+              name: 'tmp',
+              type: DartType.int,
+            ),
+          ],
+        ),
+      ),
     ],
   ).writeToFile();
 }
