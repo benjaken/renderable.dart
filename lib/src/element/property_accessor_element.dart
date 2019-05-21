@@ -61,6 +61,7 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
     this.isGetter = false,
     this.isSetter = false,
     this.isStatic = false,
+    this.body,
     this.parameters,
     this.returnType,
     this.type,
