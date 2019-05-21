@@ -1,5 +1,11 @@
 library renderable;
 
+/// contract
+export 'src/contract/renderable.dart';
+export 'src/contract/statement.dart';
+export 'src/contract/value.dart';
+export 'src/contract/writable.dart';
+
 /// constant
 export 'src/constant/compound_assignment_operator.dart';
 
