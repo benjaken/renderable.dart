@@ -10,16 +10,24 @@ export 'src/contract/writable.dart';
 export 'src/constant/compound_assignment_operator.dart';
 
 /// element
-export 'src/element/file_element.dart';
-export 'src/element/import_element.dart';
-export 'src/element/function_element.dart';
 export 'src/element/class_element.dart';
+export 'src/element/class_member_element.dart';
+export 'src/element/element.dart';
+export 'src/element/executable_element.dart';
 export 'src/element/field_element.dart';
+export 'src/element/file_element.dart';
+export 'src/element/function_element.dart';
+export 'src/element/function_typed_element.dart';
+export 'src/element/import_element.dart';
+export 'src/element/local_element.dart';
 export 'src/element/method_element.dart';
-export 'src/element/property_accessor_element.dart';
-export 'src/element/type_parameter_element.dart';
 export 'src/element/parameter_element.dart';
+export 'src/element/property_accessor_element.dart';
+export 'src/element/property_inclucing_element.dart';
 export 'src/element/raw_element.dart';
+export 'src/element/type_parameter_element.dart';
+export 'src/element/type_parameterized_element.dart';
+export 'src/element/variable_element.dart';
 
 /// type
 export 'src/type/dart_type.dart';
