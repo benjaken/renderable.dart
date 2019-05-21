@@ -1,6 +1,6 @@
 name: renderable
 description: An element-model-based Dart code generator. CodeGen's AnalyzerConverter can convert SourceGen code to CodeGen code by calling one method.
-version: 0.1.9
+version: 0.1.10
 homepage: https://github.com/copydog/renderable.dart
 author: copydog <188166004@qq.com>
 

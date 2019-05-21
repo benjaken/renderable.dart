@@ -35,7 +35,7 @@ class AnalyzerElementConverter {
   }
 
   List<ImportElement> parseImports(List<az.ImportElement> imports) {
-    return imports.map(parseImport).toList();
+    return imports.map(parseImport).where((e) => e != null).toList();
   }
 
   ClassElement parseClass(az.ClassElement element) {
