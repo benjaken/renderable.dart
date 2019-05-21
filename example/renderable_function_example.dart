@@ -16,6 +16,30 @@ void main() {
           ],
         ),
       ),
+      FunctionElement(
+        name: 'main2',
+        returnType: DartType.void_,
+        parameters: [
+          ParameterElement(
+            name: 'a',
+            type: DartType.int,
+            isNamed: true,
+          ),
+          ParameterElement(
+            name: 'b',
+            type: DartType.double,
+            isRequired: true,
+          ),
+        ],
+        body: FunctionBody(
+          statements: [
+            VariableDeclarationStatement(
+              name: 'tmp',
+              type: DartType.int,
+            ),
+          ],
+        ),
+      ),
     ],
   ).writeToFile();
 }

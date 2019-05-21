@@ -57,9 +57,9 @@ class FunctionElement extends Renderable implements ExecutableElement, LocalElem
   @override
   String render() {
     return [
-      '$returnType $name(${ParameterElementUtil.generateParameter(parameters)}) {\n',
+      '$returnType $name(${ParameterElementUtil.generateParameter(parameters)}) {',
       body,
-      '\n}',
-    ].join('');
+      '}',
+    ].join('\n');
   }
 }

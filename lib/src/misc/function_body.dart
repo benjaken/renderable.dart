@@ -27,6 +27,6 @@ class FunctionBody extends Renderable {
       this.statements.join('\n'),
       this.afterStatements.join('\n'),
       returnStatement ?? '',
-    ].join('/n');
+    ].join('\n');
   }
 }

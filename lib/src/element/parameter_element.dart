@@ -47,7 +47,7 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
     this.isRequired = false,
     this.isNamed = false,
     this.isOptionalPositional = false,
-    this.hasRequired,
+    this.hasRequired = false,
     this.defaultValue,
     this.typeParameters,
     this.parameters,
@@ -60,6 +60,8 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
   @override
   String render() {
     assert(!isRequired || defaultValue == null, 'Required parameter can\'t have default value');
+    assert(isRequired || isNamed || isOptionalPositional,
+        'Parameter must be one of isRequired, isNamed or isOptionalPositional');
 
     String defaultValueString = defaultValue == null ? '' : ' = $defaultValue';
 
