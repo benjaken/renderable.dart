@@ -34,6 +34,10 @@ class AnalyzerElementConverter {
     );
   }
 
+  List<ImportElement> parseImports(List<az.ImportElement> imports) {
+    return imports.map(parseImport).toList();
+  }
+
   ClassElement parseClass(az.ClassElement element) {
     if (element == null) return null;
 
