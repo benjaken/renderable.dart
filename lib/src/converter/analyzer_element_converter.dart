@@ -84,7 +84,7 @@ class AnalyzerElementConverter {
       returnType: analyzerTypeConverter.parseDartType(method.returnType),
       typeParameters: method.typeParameters.map(parseTypeParameterElement).toList(),
       parameters: method.parameters.map(parseParameter).toList(),
-      body: null,
+      body: FunctionBody(),
     );
   }
 
