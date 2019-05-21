@@ -21,7 +21,6 @@ Renderable's AnalyzerConverter can convert SourceGen code to Renderable code by 
     - [ ] bitwise and shift operators
     - [ ] other
 - [x] Value
-- [ ] SubClass
 - [ ] Miscellaneous
     - [ ] typedef
     - [ ] part / part of
