@@ -39,11 +39,16 @@ export 'src/type/parameterized_type.dart';
 export 'src/misc/function_body.dart';
 
 /// statement
-export 'src/statement/raw_statement.dart';
-export 'src/statement/return_statement.dart';
-export 'src/statement/variable_declaration_statement.dart';
+export 'src/statement/addition_statement.dart';
 export 'src/statement/assignment_statement.dart';
 export 'src/statement/compound_assignment_statement.dart';
+export 'src/statement/division_statement.dart';
+export 'src/statement/modulo_statement.dart';
+export 'src/statement/multiplication_statement.dart';
+export 'src/statement/raw_statement.dart';
+export 'src/statement/return_statement.dart';
+export 'src/statement/subtraction_statement.dart';
+export 'src/statement/variable_declaration_statement.dart';
 
 /// value
 export 'src/value/bool_value.dart';
