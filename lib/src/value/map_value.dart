@@ -11,7 +11,4 @@ class MapValue extends Value {
   String render() {
     return value.toString();
   }
-
-  static final bool False = false;
-  static final bool True = true;
 }

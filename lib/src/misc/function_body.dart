@@ -5,11 +5,9 @@ import 'package:renderable/src/statement/return_statement.dart';
 
 class FunctionBody extends Renderable {
   List<Statement> statements;
-  ReturnStatement returnStatement;
 
   FunctionBody({
     this.statements,
-    this.returnStatement,
   }) {
     statements ??= [];
   }
@@ -18,7 +16,6 @@ class FunctionBody extends Renderable {
   String render() {
     return [
       this.statements.join('\n'),
-      returnStatement ?? '',
     ].join('\n');
   }
 }

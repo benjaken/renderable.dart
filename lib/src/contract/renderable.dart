@@ -5,7 +5,7 @@ abstract class Renderable {
     return render();
   }
 
-  String get renderString {
+  String get code {
     return render();
   }
 }

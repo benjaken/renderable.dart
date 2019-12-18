@@ -9,9 +9,7 @@ class CompoundAssignmentOperator implements Renderable {
   String render() => operator;
 
   @override
-  String get renderString => render();
-
-  String toString() => renderString;
+  String get code => render();
 
   static final CompoundAssignmentOperator Addition = CompoundAssignmentOperator._('+');
   static final CompoundAssignmentOperator Subtraction = CompoundAssignmentOperator._('-');

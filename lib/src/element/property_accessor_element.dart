@@ -66,6 +66,7 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
     this.returnType,
     this.type,
     this.typeParameters,
+    this.isSynthetic,
   }) {
     parameters ??= [];
     typeParameters ??= [];

@@ -4,9 +4,9 @@ import 'package:renderable/src/element/property_accessor_element.dart';
 import 'package:renderable/src/element/property_inclucing_element.dart';
 import 'package:renderable/src/template/class_field_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
-import 'package:renderable/src/type/interface_type.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
+import 'package:renderable/src/util/property_accessor_element_utils.dart';
 
 class FieldElement extends Renderable implements PropertyInclucingElement, ClassMemberElement {
   Renderable value;
@@ -46,7 +46,9 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     this.getter,
     this.setter,
   }) {
-    this.type ??= InterfaceType(name: 'dynamic');
+    this.type ??= DartType.dynamic;
+    this.getter ??= PropertyAccessorElementUtils.createGetterFromField(this);
+    this.setter ??= PropertyAccessorElementUtils.createSetterFromField(this);
   }
 
   @override

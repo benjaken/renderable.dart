@@ -1,6 +1,6 @@
 import 'package:renderable/src/element/element.dart';
 
-class ClassMemberElement implements Element {
+abstract class ClassMemberElement implements Element {
   bool isStatic;
 
   @override

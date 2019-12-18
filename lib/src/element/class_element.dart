@@ -44,6 +44,7 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
     this.fields,
     this.methods,
     this.typeParameters,
+    this.isSynthetic = false,
   }) {
     interfaces ??= [];
     fields ??= [];

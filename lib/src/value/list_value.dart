@@ -11,7 +11,4 @@ class ListValue extends Value {
   String render() {
     return list.toString();
   }
-
-  static final bool False = false;
-  static final bool True = true;
 }
