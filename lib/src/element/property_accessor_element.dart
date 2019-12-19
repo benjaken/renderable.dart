@@ -6,6 +6,7 @@ import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/misc/function_body.dart';
 import 'package:renderable/src/template/property_accessor_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
+import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/parameterized_type.dart';
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
@@ -47,8 +48,9 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
   @override
   DartType returnType;
 
+  @deprecated
   @override
-  ParameterizedType type;
+  FunctionType type;
 
   @override
   List<TypeParameterElement> typeParameters;
@@ -58,16 +60,18 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
 
   PropertyAccessorElement({
     @required this.name,
-    this.isGetter = false,
-    this.isSetter = false,
+    @required this.isGetter,
+    @required this.isSetter,
     this.isStatic = false,
     this.body,
     this.parameters,
     this.returnType,
-    this.type,
     this.typeParameters,
     this.isSynthetic,
   }) {
+    assert(isGetter != null && isSetter != null);
+    assert(isGetter || isSetter);
+    assert(!isGetter || !isSetter);
     parameters ??= [];
     typeParameters ??= [];
   }

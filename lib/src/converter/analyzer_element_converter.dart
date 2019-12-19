@@ -115,7 +115,6 @@ class AnalyzerElementConverter {
       isSetter: accessor.isSetter,
       isStatic: accessor.isSetter,
       parameters: accessor.parameters.map(parseParameter).toList(),
-      type: analyzerTypeConverter.parseDartType(accessor.type),
       returnType: analyzerTypeConverter.parseDartType(accessor.returnType),
 //      typeParameters: accessor.typeParameters.map(parseTypeParameterElement).toList(),
     );

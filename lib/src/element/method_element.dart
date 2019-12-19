@@ -6,6 +6,7 @@ import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/misc/function_body.dart';
 import 'package:renderable/src/template/class_method_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
+import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/interface_type.dart';
 import 'package:renderable/src/type/parameterized_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
@@ -44,7 +45,7 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
   List<TypeParameterElement> typeParameters;
 
   @override
-  ParameterizedType type = null;
+  FunctionType type = null;
 
   @override
   bool isSynthetic;
