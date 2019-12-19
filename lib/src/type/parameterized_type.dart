@@ -1,7 +1,7 @@
+import 'package:meta/meta.dart';
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/type/dart_type.dart';
-import 'package:meta/meta.dart';
 
 class ParameterizedType extends Renderable implements DartType {
   String prefix;

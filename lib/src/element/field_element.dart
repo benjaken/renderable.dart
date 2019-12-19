@@ -1,11 +1,11 @@
+import 'package:meta/meta.dart';
+import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/class_member_element.dart';
 import 'package:renderable/src/element/property_accessor_element.dart';
 import 'package:renderable/src/element/property_inclucing_element.dart';
 import 'package:renderable/src/template/class_field_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
-import 'package:meta/meta.dart';
-import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/util/property_accessor_element_utils.dart';
 
 class FieldElement extends Renderable implements PropertyInclucingElement, ClassMemberElement {

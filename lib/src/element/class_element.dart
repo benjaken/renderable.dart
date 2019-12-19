@@ -1,3 +1,4 @@
+import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/field_element.dart';
 import 'package:renderable/src/element/method_element.dart';
@@ -6,7 +7,6 @@ import 'package:renderable/src/element/type_parameterized_element.dart';
 import 'package:renderable/src/template/class_element_template.dart';
 import 'package:renderable/src/type/interface_type.dart';
 import 'package:renderable/src/type/parameterized_type.dart';
-import 'package:mustache4dart/mustache4dart.dart' as mu;
 
 class ClassElement extends Renderable implements TypeParameterizedElement {
   /// is abstract class

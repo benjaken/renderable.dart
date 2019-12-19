@@ -1,8 +1,8 @@
+import 'package:meta/meta.dart';
 import 'package:renderable/renderable.dart';
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/element.dart';
 import 'package:renderable/src/type/dart_type.dart';
-import 'package:meta/meta.dart';
 
 class TypeParameterElement extends Renderable implements Element {
   @override

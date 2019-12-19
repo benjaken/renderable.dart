@@ -7,7 +7,6 @@ import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/misc/function_body.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
-import 'package:renderable/src/type/parameterized_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
 import 'package:renderable/src/util/template_util.dart';
 

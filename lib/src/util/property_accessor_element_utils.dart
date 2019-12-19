@@ -1,5 +1,4 @@
 import 'package:renderable/renderable.dart';
-import 'package:analyzer/dart/element/element.dart' as az;
 
 abstract class PropertyAccessorElementUtils {
   static PropertyAccessorElement createGetterFromField(FieldElement fieldElement) {

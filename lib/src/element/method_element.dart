@@ -1,3 +1,5 @@
+import 'package:meta/meta.dart';
+import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/class_member_element.dart';
 import 'package:renderable/src/element/executable_element.dart';
@@ -8,11 +10,8 @@ import 'package:renderable/src/template/class_method_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/interface_type.dart';
-import 'package:renderable/src/type/parameterized_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
 import 'package:renderable/src/util/template_util.dart';
-import 'package:meta/meta.dart';
-import 'package:mustache4dart/mustache4dart.dart' as mu;
 
 class MethodElement extends Renderable implements ClassMemberElement, ExecutableElement {
   FunctionBody body;
