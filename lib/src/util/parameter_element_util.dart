@@ -2,6 +2,9 @@ import 'package:renderable/src/element/parameter_element.dart';
 
 class ParameterElementUtil {
   static String generateParameter(List<ParameterElement> parameters) {
+    if (parameters == null || parameters.isEmpty) {
+      return "";
+    }
     List<ParameterElement> requiredParameters = parameters.where((e) => e.isRequired).toList();
     List<ParameterElement> namedParameters = parameters.where((e) => e.isNamed).toList();
     List<ParameterElement> optionalPositionalParameters =

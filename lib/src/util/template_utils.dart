@@ -1,7 +1,32 @@
 import 'package:renderable/renderable.dart';
+import 'package:renderable/src/element/namespace_combinator.dart';
 import 'package:renderable/src/type/interface_type.dart';
 
-class TemplateUtil {
+class TemplateUtils {
+  static String stringFromList(List list, [String delimiter = "\n", String suffix = ""]) {
+    return list.where((item) => item != null).where((item) => item != "").map((item) {
+          if (item is List) {
+            return stringFromList(item);
+          }
+          return item;
+        }).join(delimiter) +
+        suffix;
+  }
+
+  static String stringFromCombinators(List<NamespaceCombinator> combinators) {
+    if (combinators.isEmpty) {
+      return "";
+    }
+    List<String> shows = [];
+    List<String> hides = [];
+    combinators.whereType<ShowElementCombinator>().forEach((c) => shows.addAll(c.shownNames));
+    combinators.whereType<HideElementCombinator>().forEach((c) => hides.addAll(c.hiddenNames));
+    return stringFromList([
+      if (shows.isNotEmpty) "show ${stringFromList(shows, ", ")}",
+      if (hides.isNotEmpty) "hide ${stringFromList(hides, ", ")}",
+    ], " ");
+  }
+
   static InterfaceType wrapTypeArguments(
     InterfaceType origin,
     InterfaceType wrapper,

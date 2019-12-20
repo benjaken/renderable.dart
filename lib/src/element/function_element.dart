@@ -8,7 +8,7 @@ import 'package:renderable/src/misc/function_body.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
-import 'package:renderable/src/util/template_util.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class FunctionElement extends Renderable implements ExecutableElement, LocalElement {
   FunctionBody body;
@@ -59,13 +59,15 @@ class FunctionElement extends Renderable implements ExecutableElement, LocalElem
 
   @override
   String render() {
-    String functionModifiers = TemplateUtil.generateFunctionModifiers(
+    String functionModifiersString = TemplateUtils.generateFunctionModifiers(
       isAsynchronous: isAsynchronous,
       isGenerator: isGenerator,
     );
 
+    String parametersString = ParameterElementUtil.generateParameter(parameters);
+
     return [
-      '$returnType $name(${ParameterElementUtil.generateParameter(parameters)}) $functionModifiers {',
+      '$returnType $name($parametersString}) $functionModifiersString {',
       body,
       '}',
     ].join('\n');

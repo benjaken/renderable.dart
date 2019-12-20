@@ -1,4 +1,6 @@
-abstract class Element {
+import 'package:renderable/renderable.dart';
+
+abstract class Element implements Renderable {
   String name;
 
   bool isSynthetic;

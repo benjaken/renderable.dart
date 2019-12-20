@@ -11,7 +11,7 @@ import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/interface_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
-import 'package:renderable/src/util/template_util.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class MethodElement extends Renderable implements ClassMemberElement, ExecutableElement {
   FunctionBody body;
@@ -78,8 +78,8 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
         'name': name,
         'returnType': returnType,
         'isAbstract': isAbstract,
-        'modifiers': TemplateUtil.generateModifiers(isStatic: isStatic),
-        'functionModifiers': TemplateUtil.generateFunctionModifiers(
+        'modifiers': TemplateUtils.generateModifiers(isStatic: isStatic),
+        'functionModifiers': TemplateUtils.generateFunctionModifiers(
           isAsynchronous: isAsynchronous,
           isGenerator: isGenerator,
         ),

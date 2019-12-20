@@ -26,7 +26,7 @@ class AnalyzerElementConverter {
     });
 
     return ImportElement(
-      path: import.uri,
+      uri: import.uri,
       isDeferred: import.isDeferred,
       prefix: import.prefix?.name,
       hides: hides,

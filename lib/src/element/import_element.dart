@@ -1,17 +1,30 @@
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/element/element.dart';
+import 'package:renderable/src/element/uri_referenced_element.dart';
 import 'package:renderable/src/template/import_element_template.dart';
 
-class ImportElement extends Renderable {
-  String path;
+class ImportElement extends Renderable implements UriReferencedElement, Element {
   String prefix;
+
   bool isDeferred;
+
   List<String> shows;
+
   List<String> hides;
 
+  @override
+  bool isSynthetic;
+
+  @override
+  String name;
+
+  @override
+  String uri;
+
   ImportElement({
-    @required this.path,
+    @required this.uri,
     this.prefix,
     this.isDeferred = false,
     this.hides,
@@ -28,7 +41,7 @@ class ImportElement extends Renderable {
     return mu.render(
       import_element_template,
       {
-        'path': path,
+        'path': uri,
         'prefix': prefix,
         'isDeferred': isDeferred,
         'showsString': shows.isNotEmpty ? ' show ${shows.join(', ')}' : '',
