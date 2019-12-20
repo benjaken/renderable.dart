@@ -29,8 +29,6 @@ class AnalyzerElementConverter {
       uri: import.uri,
       isDeferred: import.isDeferred,
       prefix: import.prefix?.name,
-      hides: hides,
-      shows: shows,
     );
   }
 
