@@ -20,6 +20,7 @@ class MirrorGenerator extends GeneratorForAnnotation<Mirror> {
             .where((e) => e != null)
             .toList();
 
+    print(element.library.exports);
 //    if (element is az.ClassElement) {
 //      if (firstCheck[buildStep.inputId.uri.toString()] != true) {
 //        element.library.imports.forEach((e) {

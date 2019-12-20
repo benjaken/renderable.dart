@@ -1,6 +1,10 @@
+library origin_class;
+
 import 'package:demo/annotation/mirror.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart' as rx show Observable hide PublishSubject;
+import 'package:rxdart/rxdart.dart';
+import 'package:rxdart/rxdart.dart';
 
 @mirror
 abstract class Interface1 {}
@@ -13,9 +17,9 @@ class OriginClass<A extends Object, B extends Map> implements Interface1, Interf
   static int intField = 1;
 //  final List<int> listIntField = [1];
   Map<List<Future<int>>, int> nestedField = {};
-  rx.Observable<int> prefixedField;
-  rx.Observable<rx.Observable> nestedPrefixedField;
-  rx.Observable<A> field5;
+  Stream<int> prefixedField;
+  Stream<Stream> nestedPrefixedField;
+  Stream<A> field5;
 
   int get getter1 => null;
 
@@ -27,7 +31,7 @@ class OriginClass<A extends Object, B extends Map> implements Interface1, Interf
 
   void method1(int a, int b) {}
 
-  Future<rx.Observable> method2(int a, [int b(String c)]) async {
+  Future<Stream> method2(int a, [int b(String c)]) async {
     return null;
   }
 
@@ -39,8 +43,8 @@ class OriginClass<A extends Object, B extends Map> implements Interface1, Interf
     String c = 'dv',
   }) async* {}
 
-  rx.Observable<dynamic> method5<E extends List>({
+  Stream<dynamic> method5<E extends List>({
     @required E b,
-    rx.Observable c,
+    Stream c,
   }) {}
 }

@@ -5,7 +5,7 @@ homepage: https://github.com/copydog/renderable.dart
 author: copydog <188166004@qq.com>
 
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.7.0 <3.0.0'
 
 dependencies:
   mustache4dart: any
