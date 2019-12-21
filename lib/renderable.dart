@@ -15,7 +15,6 @@ export 'src/constant/compound_assignment_operator.dart';
 export 'src/contract/renderable.dart';
 export 'src/contract/statement.dart';
 export 'src/contract/value.dart';
-export 'src/contract/writable.dart';
 
 /// element
 export 'src/element/class_element.dart';
