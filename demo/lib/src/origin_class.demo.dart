@@ -4,7 +4,4 @@
 // DemoGenerator
 // **************************************************************************
 
-import 'dart:core';
-export "dart:collection"
-    show ListQueue, ListMixin, ListBase
-    hide MapMixin, MapBase, MapView;
+// Error: Failed assertion: boolean expression must not be null

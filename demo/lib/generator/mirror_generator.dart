@@ -13,12 +13,12 @@ class MirrorGenerator extends GeneratorForAnnotation<Mirror> {
   @override
   generateForAnnotatedElement(az.Element element, ConstantReader annotation, BuildStep buildStep) {
     /// render import only one time
-    List<ImportElement> imports = firstCheck[buildStep.inputId.uri.toString()] == true
-        ? []
-        : element.library.imports
-            .map(AnalyzerElementConverter(element.library.id).parseImport)
-            .where((e) => e != null)
-            .toList();
+//    List<ImportElement> imports = firstCheck[buildStep.inputId.uri.toString()] == true
+//        ? []
+//        : element.library.imports
+//            .map(AnalyzerElementConverter(element.library.id).parseImport)
+//            .where((e) => e != null)
+//            .toList();
 
     print(element.library.exports);
 //    if (element is az.ClassElement) {
@@ -37,13 +37,13 @@ class MirrorGenerator extends GeneratorForAnnotation<Mirror> {
 //      });
 //    }
 
-    firstCheck[buildStep.inputId.uri.toString()] = true;
-
-    return FileElement(
-      imports: imports,
-      renders: [
-        AnalyzerElementConverter(element.library.id).parseClass(element),
-      ],
-    ).render();
+//    firstCheck[buildStep.inputId.uri.toString()] = true;
+//
+//    return FileElement(
+//      imports: imports,
+//      renders: [
+//        AnalyzerElementConverter(element.library.id).parseClass(element),
+//      ],
+//    ).render();
   }
 }
