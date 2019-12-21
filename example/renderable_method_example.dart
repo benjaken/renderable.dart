@@ -4,9 +4,8 @@ import 'package:renderable/src/statement/variable_declaration_statement.dart';
 import 'package:renderable/src/type/dart_type.dart';
 
 void main() {
-  FileElement(
-    filePath: 'example/generated/renderable_method_example.generated.dart',
-    renders: [
+  var library = LibraryElement(
+    topLevelElements: [
       ClassElement(
         name: 'RenderableMethodExample',
         methods: [
@@ -16,33 +15,29 @@ void main() {
           MethodElement(
             name: 'basicMethod',
             returnType: InterfaceType(name: 'int'),
-            body: FunctionBody(
-              statements: [
-                VariableDeclarationStatement(
-                  name: 'a',
-                  type: DartType(name: 'int'),
-                  value: IntValue(100),
+            statements: [
+              VariableDeclarationStatement(
+                name: 'a',
+                type: DartType(name: 'int'),
+                value: IntValue(100),
+              ),
+              VariableDeclarationStatement(
+                name: 'b',
+                type: DartType(name: 'int'),
+                value: IntValue(33),
+              ),
+              VariableDeclarationStatement(
+                name: 'c',
+                type: DartType(name: 'int'),
+                value: AdditionStatement(
+                  values: [
+                    Variable(name: 'a'),
+                    Variable(name: 'b'),
+                  ],
                 ),
-                VariableDeclarationStatement(
-                  name: 'b',
-                  type: DartType(name: 'int'),
-                  value: IntValue(33),
-                ),
-                VariableDeclarationStatement(
-                  name: 'c',
-                  type: DartType(name: 'int'),
-                  value: AdditionStatement(
-                    values: [
-                      Variable(name: 'a'),
-                      Variable(name: 'b'),
-                    ],
-                  ),
-                ),
-                ReturnStatement(
-                  returnValue: Variable(name: 'c'),
-                ),
-              ],
-            ),
+              ),
+              ReturnStatement(Variable(name: 'c')),
+            ],
           ),
           MethodElement(
             isStatic: true,
@@ -204,5 +199,10 @@ void main() {
         ],
       ),
     ],
-  ).writeToFile();
+  );
+
+  FileUtils.writeLibraryToFile(
+    library,
+    'example/generated/renderable_method_example.generated.dart',
+  );
 }

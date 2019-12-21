@@ -1,12 +1,8 @@
-import 'dart:io';
-
 import 'package:renderable/renderable.dart';
-import 'package:renderable/src/element/file_element.dart';
 
 main() {
-  FileElement(
-    filePath: 'example/generated/renderable_example.generated.dart',
-    renders: [
+  var library = LibraryElement(
+    topLevelElements: [
       ClassElement(
         name: 'RenderableExampleInterface1',
         isAbstract: true,
@@ -38,11 +34,16 @@ main() {
             isFinal: true,
             name: 'fieldWithModifier1',
             type: InterfaceType(name: 'int'),
-            value: RawElement(raw: '1'),
+            value: RawElement('1'),
           ),
         ],
       ),
     ],
-  ).writeToFile();
+  );
+  FileUtils.writeLibraryToFile(
+    library,
+    "example/generated/renderable_example.generated.dart",
+  );
+
   print('render complete');
 }

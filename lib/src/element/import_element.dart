@@ -31,6 +31,19 @@ class ImportElement extends Renderable implements UriReferencedElement, Element 
     combinators ??= [];
   }
 
+  ImportElement.simple({
+    @required this.uri,
+    this.prefix,
+    this.isDeferred = false,
+    List<String> shows,
+    List<String> hides,
+  }) {
+    combinators = [
+      ShowElementCombinator(shows),
+      HideElementCombinator(hides),
+    ];
+  }
+
   @override
   String render() {
     assert(!isDeferred || prefix != null, 'isDeferred can\'t use without prefix');

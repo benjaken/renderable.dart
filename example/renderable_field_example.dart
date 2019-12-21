@@ -1,12 +1,11 @@
 import 'package:renderable/renderable.dart';
 
 void main() {
-  FileElement(
-    filePath: 'example/generated/renderable_field_example.generated.dart',
+  var library = LibraryElement(
     imports: [
-      ImportElement(path: '../misc/some_file.dart', prefix: 'sf'),
+      ImportElement(uri: '../misc/some_file.dart', prefix: 'sf'),
     ],
-    renders: [
+    topLevelElements: [
       ClassElement(
         name: 'RenderableFieldExample',
         fields: [
@@ -14,17 +13,17 @@ void main() {
           FieldElement(
             name: 'finalField',
             isFinal: true,
-            value: RawElement(raw: '1'),
+            value: RawElement('1'),
           ),
           FieldElement(
             name: 'staticConstField',
             isStatic: true,
             isConst: true,
-            value: RawElement(raw: '1'),
+            value: RawElement('1'),
           ),
           FieldElement(name: 'staticField', isStatic: true),
           FieldElement(
-              name: 'staticFinalField', isStatic: true, isFinal: true, value: RawElement(raw: '1')),
+              name: 'staticFinalField', isStatic: true, isFinal: true, value: RawElement('1')),
           FieldElement(
             name: 'typedField',
             type: InterfaceType(name: 'Object'),
@@ -38,7 +37,7 @@ void main() {
             isStatic: true,
             isFinal: true,
             type: InterfaceType(name: 'SomeFile', prefix: 'sf'),
-            value: RawElement(raw: 'sf.SomeFile()'),
+            value: RawElement('sf.SomeFile()'),
           ),
           FieldElement(
             name: 'simpleGenericField',
@@ -52,7 +51,7 @@ void main() {
                 InterfaceType(name: 'SomeFile2', prefix: 'sf'),
               ],
             ),
-            value: RawElement(raw: 'sf.SomeFile()'),
+            value: RawElement('sf.SomeFile()'),
           ),
           FieldElement(
             name: 'complexGenericField',
@@ -81,17 +80,22 @@ void main() {
                 InterfaceType(name: 'String'),
               ],
             ),
-            value: RawElement(raw: 'sf.SomeFile()'),
+            value: RawElement('sf.SomeFile()'),
           ),
 //          FieldElement(
 //            name: 'complexGenericField',
 //            isStatic: true,
 //            isFinal: true,
 //            type: InterfaceType(name: 'SomeFile', prefix: 'sf'),
-//            value: RawElement(raw: 'sf.SomeFile()'),
+//            value: RawElement('sf.SomeFile()'),
 //          ),
         ],
       )
     ],
-  ).writeToFile();
+  );
+
+  FileUtils.writeLibraryToFile(
+    library,
+    'example/generated/renderable_field_example.generated.dart',
+  );
 }

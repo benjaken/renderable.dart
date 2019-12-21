@@ -1,9 +1,8 @@
 import 'package:renderable/renderable.dart';
 
 void main() {
-  FileElement(
-    filePath: 'example/generated/renderable_class_example.generated.dart',
-    renders: [
+  var library = LibraryElement(
+    topLevelElements: [
       ClassElement(
         name: 'ClassExample1',
       ),
@@ -44,5 +43,5 @@ void main() {
         ],
       ),
     ],
-  ).writeToFile();
+  );
 }

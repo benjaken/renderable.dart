@@ -1,9 +1,8 @@
 import 'package:renderable/renderable.dart';
 
 void main() {
-  FileElement(
-    filePath: 'example/generated/renderable_value_example.generated.dart',
-    renders: [
+  var library = LibraryElement(
+    topLevelElements: [
       ClassElement(
         name: 'RenderableValue',
         fields: [
@@ -60,5 +59,10 @@ void main() {
         ],
       ),
     ],
-  ).writeToFile();
+  );
+
+  FileUtils.writeLibraryToFile(
+    library,
+    'example/generated/renderable_value_example.generated.dart',
+  );
 }

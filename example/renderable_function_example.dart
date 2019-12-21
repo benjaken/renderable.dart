@@ -1,20 +1,17 @@
 import 'package:renderable/renderable.dart';
 
 void main() {
-  FileElement(
-    filePath: 'example/generated/renderable_function_example.generated.dart',
-    renders: [
+  var library = LibraryElement(
+    topLevelElements: [
       FunctionElement(
         name: 'main',
         returnType: DartType.void_,
-        body: FunctionBody(
-          statements: [
-            VariableDeclarationStatement(
-              name: 'tmp',
-              type: DartType.int,
-            ),
-          ],
-        ),
+        statements: [
+          VariableDeclarationStatement(
+            name: 'tmp',
+            type: DartType.int,
+          ),
+        ],
       ),
       FunctionElement(
         name: 'main2',
@@ -31,56 +28,53 @@ void main() {
             isRequired: true,
           ),
         ],
-        body: FunctionBody(
-          statements: [
-            VariableDeclarationStatement(
-              name: 'tmp',
-              type: DartType.int,
-            ),
-          ],
-        ),
+        statements: [
+          VariableDeclarationStatement(
+            name: 'tmp',
+            type: DartType.int,
+          ),
+        ],
       ),
       FunctionElement(
         name: 'main3',
         returnType: DartType.dynamic,
         isAsynchronous: true,
         isGenerator: true,
-        body: FunctionBody(
-          statements: [
-            VariableDeclarationStatement(
-              name: 'tmp',
-              type: DartType.int,
-            ),
-          ],
-        ),
+        statements: [
+          VariableDeclarationStatement(
+            name: 'tmp',
+            type: DartType.int,
+          ),
+        ],
       ),
       FunctionElement(
         name: 'main4',
         returnType: DartType.dynamic,
         isAsynchronous: false,
         isGenerator: true,
-        body: FunctionBody(
-          statements: [
-            VariableDeclarationStatement(
-              name: 'tmp',
-              type: DartType.int,
-            ),
-          ],
-        ),
+        statements: [
+          VariableDeclarationStatement(
+            name: 'tmp',
+            type: DartType.int,
+          ),
+        ],
       ),
       FunctionElement(
         name: 'main5',
         returnType: DartType.dynamic,
         isAsynchronous: true,
-        body: FunctionBody(
-          statements: [
-            VariableDeclarationStatement(
-              name: 'tmp',
-              type: DartType.int,
-            ),
-          ],
-        ),
+        statements: [
+          VariableDeclarationStatement(
+            name: 'tmp',
+            type: DartType.int,
+          ),
+        ],
       ),
     ],
-  ).writeToFile();
+  );
+
+  FileUtils.writeLibraryToFile(
+    library,
+    'example/generated/renderable_function_example.generated.dart',
+  );
 }
