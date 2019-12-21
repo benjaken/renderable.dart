@@ -49,7 +49,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
   }) {
     this.getter ??= PropertyAccessorElementUtils.createGetterFromField(this);
     this.setter ??= PropertyAccessorElementUtils.createSetterFromField(this);
-    if (!isFinal) {
+    if (!isFinal && !isConst) {
       this.type ??= DartType.var_;
     }
   }
@@ -111,7 +111,6 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
 
   @override
   String render() {
-    assert(type != null, 'Field type can\'t be null');
     assert(!isFinal || !isConst, 'Members can\'t be declared to be both final and const');
     assert((isConst && isStatic) || (!isConst), 'Only static fields can be declared as const');
 
@@ -131,6 +130,6 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
       type,
       name,
       if (value != null) ["=", value],
-    ], suffix: ";");
+    ], delimiter: " ", suffix: ";");
   }
 }

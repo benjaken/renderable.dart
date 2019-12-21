@@ -18,7 +18,7 @@ class TemplateUtils {
   }
 
   static String stringFromCombinators(List<NamespaceCombinator> combinators) {
-    if (combinators.isEmpty) {
+    if (combinators == null || combinators.isEmpty) {
       return "";
     }
     List<String> shows = [];

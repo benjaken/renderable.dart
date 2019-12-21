@@ -11,6 +11,11 @@ class CompoundAssignmentOperator implements Renderable {
   @override
   String get code => render();
 
+  @override
+  String toString() {
+    return render();
+  }
+
   static final CompoundAssignmentOperator Addition = CompoundAssignmentOperator._('+');
   static final CompoundAssignmentOperator Subtraction = CompoundAssignmentOperator._('-');
   static final CompoundAssignmentOperator Multiplication = CompoundAssignmentOperator._('*');

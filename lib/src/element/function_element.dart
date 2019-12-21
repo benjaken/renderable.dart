@@ -68,10 +68,10 @@ class FunctionElement extends Renderable implements ExecutableElement, LocalElem
 
     String parametersString = ParameterElementUtil.generateParameter(parameters);
 
-    return [
-      '$returnType $name($parametersString}) $functionModifiersString {',
+    return TemplateUtils.stringFromList([
+      '$returnType $name($parametersString) $functionModifiersString {',
       statements,
       '}',
-    ].join('\n');
+    ]);
   }
 }
