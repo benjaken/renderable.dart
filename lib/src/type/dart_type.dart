@@ -15,7 +15,7 @@ class DartType extends Renderable {
 
   static final DartType void_ = DartType(name: 'void');
   static final DartType dynamic = DartType(name: 'dynamic');
-  static final DartType var_ = DartType(name: 'dynamic');
+  static final DartType var_ = DartType(name: 'var');
   static final DartType int = DartType(name: 'int');
   static final DartType double = DartType(name: 'double');
   static final DartType num = DartType(name: 'num');

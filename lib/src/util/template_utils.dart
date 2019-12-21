@@ -3,7 +3,11 @@ import 'package:renderable/src/element/namespace_combinator.dart';
 import 'package:renderable/src/type/interface_type.dart';
 
 class TemplateUtils {
-  static String stringFromList(List list, [String delimiter = "\n", String suffix = ""]) {
+  static String stringFromList(
+    List list, {
+    String delimiter = "\n",
+    String suffix = "",
+  }) {
     return list.where((item) => item != null).where((item) => item != "").map((item) {
           if (item is List) {
             return stringFromList(item);
@@ -22,9 +26,42 @@ class TemplateUtils {
     combinators.whereType<ShowElementCombinator>().forEach((c) => shows.addAll(c.shownNames));
     combinators.whereType<HideElementCombinator>().forEach((c) => hides.addAll(c.hiddenNames));
     return stringFromList([
-      if (shows.isNotEmpty) "show ${stringFromList(shows, ", ")}",
-      if (hides.isNotEmpty) "hide ${stringFromList(hides, ", ")}",
-    ], " ");
+      if (shows.isNotEmpty) "show ${stringFromList(shows, delimiter: ", ")}",
+      if (hides.isNotEmpty) "hide ${stringFromList(hides, delimiter: ", ")}",
+    ], delimiter: " ");
+  }
+
+  static String stringFromTypeParameters(List<TypeParameterElement> typeParameters) {
+    if (typeParameters == null || typeParameters.isEmpty) {
+      return "";
+    }
+    return '<${typeParameters.join(', ')}>';
+  }
+
+  static String stringFromParameters(List<ParameterElement> parameters) {
+    if (parameters == null || parameters.isEmpty) {
+      return "";
+    }
+    List<ParameterElement> requiredParameters = parameters.where((e) => e.isRequired).toList();
+    List<ParameterElement> namedParameters = parameters.where((e) => e.isNamed).toList();
+    List<ParameterElement> optionalPositionalParameters =
+        parameters.where((e) => e.isOptionalPositional).toList();
+
+    List<String> templateList = [];
+
+    if (requiredParameters.isNotEmpty) {
+      templateList.add(requiredParameters.join(', '));
+    }
+
+    if (optionalPositionalParameters.isNotEmpty) {
+      templateList.add('[${optionalPositionalParameters.join(', ')}]');
+    }
+
+    if (namedParameters.isNotEmpty) {
+      templateList.add('{${namedParameters.join(', ')}}');
+    }
+
+    return templateList.join(', ');
   }
 
   static InterfaceType wrapTypeArguments(

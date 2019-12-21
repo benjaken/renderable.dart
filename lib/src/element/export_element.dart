@@ -27,10 +27,14 @@ class ExportElement extends Renderable implements UriReferencedElement, Element 
 
   @override
   String render() {
-    return TemplateUtils.stringFromList([
-      "export",
-      StringUtils.quote(this.uri),
-      TemplateUtils.stringFromCombinators(combinators),
-    ], " ", ";");
+    return TemplateUtils.stringFromList(
+      [
+        "export",
+        StringUtils.quote(this.uri),
+        TemplateUtils.stringFromCombinators(combinators),
+      ],
+      delimiter: " ",
+      suffix: ";",
+    );
   }
 }

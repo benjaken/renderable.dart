@@ -66,7 +66,7 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
     this.parameters,
     this.returnType,
     this.typeParameters,
-    this.isSynthetic,
+    this.isSynthetic = false,
   }) {
     assert(isGetter != null && isSetter != null);
     assert(isGetter || isSetter);

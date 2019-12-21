@@ -1,12 +1,12 @@
 library renderable;
 
 /// util
-export 'package:renderable/src/converter/analyzer_element_converter.dart';
-export 'package:renderable/src/converter/analyzer_import_loop_up.dart';
-export 'package:renderable/src/converter/analyzer_type_converter.dart';
-export 'package:renderable/src/util/parameter_element_util.dart';
-export 'package:renderable/src/util/template_utils.dart';
-export 'package:renderable/src/util/file_utils.dart';
+export 'src/converter/analyzer_element_converter.dart';
+export 'src/converter/analyzer_import_loop_up.dart';
+export 'src/converter/analyzer_type_converter.dart';
+export 'src/util/parameter_element_util.dart';
+export 'src/util/template_utils.dart';
+export 'src/util/file_utils.dart';
 
 /// constant
 export 'src/constant/compound_assignment_operator.dart';

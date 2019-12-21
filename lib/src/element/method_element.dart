@@ -11,11 +11,10 @@ import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/interface_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
+import 'package:renderable/src/util/string_utils.dart';
 import 'package:renderable/src/util/template_utils.dart';
 
 class MethodElement extends Renderable implements ClassMemberElement, ExecutableElement {
-  FunctionBody body;
-
   @override
   bool isStatic;
 
@@ -59,34 +58,43 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
     this.isGenerator = false,
     this.typeParameters,
     this.parameters,
-    this.body,
   }) {
     returnType ??= InterfaceType(name: 'dynamic');
     typeParameters ??= [];
     parameters ??= [];
   }
 
-  String _renderTypeParameters() {
-    return typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>';
-  }
-
   @override
   String render() {
-    return mu.render(
-      class_method_element_template,
-      {
-        'name': name,
-        'returnType': returnType,
-        'isAbstract': isAbstract,
-        'modifiers': TemplateUtils.generateModifiers(isStatic: isStatic),
-        'functionModifiers': TemplateUtils.generateFunctionModifiers(
-          isAsynchronous: isAsynchronous,
-          isGenerator: isGenerator,
-        ),
-        'body': body,
-        'typeParametersString': _renderTypeParameters(),
-        'parametersString': ParameterElementUtil.generateParameter(parameters),
-      },
+    String modifierString = TemplateUtils.generateModifiers(isStatic: isStatic);
+    String functionModifierString = TemplateUtils.generateFunctionModifiers(
+      isAsynchronous: isAsynchronous,
+      isGenerator: isGenerator,
     );
+    String typeParameterString = TemplateUtils.stringFromTypeParameters(typeParameters);
+    String parameterString = TemplateUtils.stringFromParameters(parameters);
+    String declarationString = TemplateUtils.stringFromList(
+      [
+        modifierString,
+        returnType,
+        name,
+        typeParameterString,
+        "(",
+        parameterString,
+        ")",
+        functionModifierString,
+      ],
+      delimiter: " ",
+    );
+
+    if (isAbstract) {
+      return StringUtils.append(declarationString, ";");
+    }
+    return TemplateUtils.stringFromList([
+      // render declaration
+      TemplateUtils.stringFromList([declarationString, "{"], delimiter: " "),
+      // render concrete ending token
+      "}"
+    ]);
   }
 }

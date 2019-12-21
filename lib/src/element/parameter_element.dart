@@ -17,7 +17,7 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
   bool hasRequired;
 
-  String defaultValue;
+  Renderable defaultValue;
 
   List<TypeParameterElement> typeParameters;
 
@@ -55,6 +55,57 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
     type ??= DartType(name: 'dynamic');
     typeParameters ??= [];
     parameters ??= [];
+  }
+
+  factory ParameterElement.required({
+    @required String name,
+    DartType type,
+    Renderable defaultValue,
+    List<TypeParameterElement> typeParameters,
+    List<ParameterElement> parameters,
+  }) {
+    return ParameterElement(
+      name: name,
+      type: type,
+      defaultValue: defaultValue,
+      typeParameters: typeParameters,
+      parameters: parameters,
+      isRequired: true,
+    );
+  }
+
+  factory ParameterElement.named({
+    @required String name,
+    DartType type,
+    Renderable defaultValue,
+    List<TypeParameterElement> typeParameters,
+    List<ParameterElement> parameters,
+  }) {
+    return ParameterElement(
+      name: name,
+      type: type,
+      defaultValue: defaultValue,
+      typeParameters: typeParameters,
+      parameters: parameters,
+      isNamed: true,
+    );
+  }
+
+  factory ParameterElement.optional({
+    @required String name,
+    DartType type,
+    Renderable defaultValue,
+    List<TypeParameterElement> typeParameters,
+    List<ParameterElement> parameters,
+  }) {
+    return ParameterElement(
+      name: name,
+      type: type,
+      defaultValue: defaultValue,
+      typeParameters: typeParameters,
+      parameters: parameters,
+      isOptionalPositional: true,
+    );
   }
 
   @override

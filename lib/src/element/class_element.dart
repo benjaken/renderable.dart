@@ -1,12 +1,11 @@
-import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/field_element.dart';
 import 'package:renderable/src/element/method_element.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/element/type_parameterized_element.dart';
-import 'package:renderable/src/template/class_element_template.dart';
 import 'package:renderable/src/type/interface_type.dart';
 import 'package:renderable/src/type/parameterized_type.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class ClassElement extends Renderable implements TypeParameterizedElement {
   /// is abstract class
@@ -54,17 +53,23 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
 
   @override
   String render() {
-    return mu.render(
-      class_element_template,
-      {
-        'name': name,
-        'isAbstract': isAbstract,
-        'supertype': supertype,
-        'interfacesString': interfaces.isEmpty ? '' : ' implements ${interfaces.join(', ')}',
-        'fields': fields,
-        'methods': methods,
-        'typeParametersString': typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>',
-      },
-    );
+    return TemplateUtils.stringFromList([
+      // build class wrapper
+      TemplateUtils.stringFromList([
+        if (isAbstract) "abstract",
+        "class",
+        name,
+        type,
+        typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>',
+        if (supertype != null) "extends $supertype",
+        interfaces.isEmpty ? '' : ' implements ${interfaces.join(', ')}',
+        "{"
+      ], delimiter: " "),
+      // build fields
+      fields,
+      // build methods
+      methods,
+      "}"
+    ]);
   }
 }

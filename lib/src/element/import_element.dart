@@ -35,12 +35,16 @@ class ImportElement extends Renderable implements UriReferencedElement, Element 
   String render() {
     assert(!isDeferred || prefix != null, 'isDeferred can\'t use without prefix');
 
-    return TemplateUtils.stringFromList([
-      "import",
-      StringUtils.quote(this.uri),
-      if (isDeferred && prefix != null) "deferred as $prefix",
-      if (!isDeferred && prefix != null) "as $prefix",
-      TemplateUtils.stringFromCombinators(combinators),
-    ], " ", ";");
+    return TemplateUtils.stringFromList(
+      [
+        "import",
+        StringUtils.quote(this.uri),
+        if (isDeferred && prefix != null) "deferred as $prefix",
+        if (!isDeferred && prefix != null) "as $prefix",
+        TemplateUtils.stringFromCombinators(combinators),
+      ],
+      delimiter: " ",
+      suffix: ";",
+    );
   }
 }
