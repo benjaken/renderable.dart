@@ -5,9 +5,7 @@ import 'package:renderable/src/contract/statement.dart';
 class ReturnStatement extends Statement {
   Renderable returnValue;
 
-  ReturnStatement({
-    @required this.returnValue,
-  });
+  ReturnStatement(this.returnValue);
 
   @override
   String render() {

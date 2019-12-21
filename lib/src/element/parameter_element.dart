@@ -15,8 +15,6 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
   bool isOptionalPositional;
 
-  bool hasRequired;
-
   Renderable defaultValue;
 
   List<TypeParameterElement> typeParameters;
@@ -47,7 +45,6 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
     this.isRequired = false,
     this.isNamed = false,
     this.isOptionalPositional = false,
-    this.hasRequired = false,
     this.defaultValue,
     this.typeParameters,
     this.parameters,
@@ -116,9 +113,6 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
     String defaultValueString = defaultValue == null ? '' : ' = $defaultValue';
 
-    /// todo: use annotation instead
-    String annotationString = hasRequired ? '@required ' : '';
-
     /// for function
     if (parameters.isNotEmpty) {
       return '$type $name(${ParameterElementUtil.generateParameter(parameters)})$defaultValueString';
@@ -130,9 +124,9 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
     }
 
     if (type is TypeParameterType) {
-      return '$annotationString${type.name} $name$defaultValueString';
+      return '${type.name} $name$defaultValueString';
     }
 
-    return '$annotationString$type $name$defaultValueString';
+    return '$type $name$defaultValueString';
   }
 }

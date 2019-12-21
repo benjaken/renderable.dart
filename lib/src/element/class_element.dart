@@ -4,7 +4,6 @@ import 'package:renderable/src/element/method_element.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/element/type_parameterized_element.dart';
 import 'package:renderable/src/type/interface_type.dart';
-import 'package:renderable/src/type/parameterized_type.dart';
 import 'package:renderable/src/util/template_utils.dart';
 
 class ClassElement extends Renderable implements TypeParameterizedElement {
@@ -28,9 +27,6 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
 
   @override
   List<TypeParameterElement> typeParameters;
-
-  @override
-  ParameterizedType type;
 
   @override
   bool isSynthetic;
@@ -59,7 +55,6 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
         if (isAbstract) "abstract",
         "class",
         name,
-        type,
         typeParameters.isEmpty ? '' : '<${typeParameters.join(', ')}>',
         if (supertype != null) "extends $supertype",
         interfaces.isEmpty ? '' : ' implements ${interfaces.join(', ')}',
