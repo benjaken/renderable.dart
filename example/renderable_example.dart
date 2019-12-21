@@ -40,10 +40,9 @@ main() {
       ),
     ],
   );
+
   FileUtils.writeLibraryToFile(
     library,
     "example/generated/renderable_example.generated.dart",
   );
-
-  print('render complete');
 }

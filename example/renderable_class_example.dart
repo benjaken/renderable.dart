@@ -44,4 +44,9 @@ void main() {
       ),
     ],
   );
+
+  FileUtils.writeLibraryToFile(
+    library,
+    "example/generated/renderable_class_example.generated.dart",
+  );
 }
