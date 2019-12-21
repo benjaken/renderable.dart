@@ -56,9 +56,9 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
 
   factory FieldElement.getter({
     @required String name,
-    bool isStatic,
-    bool isConst,
-    bool isFinal,
+    bool isStatic = false,
+    bool isConst = false,
+    bool isFinal = false,
     DartType type,
     List<Statement> statements,
   }) {
@@ -75,9 +75,9 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
 
   factory FieldElement.setter({
     @required String name,
-    bool isStatic,
-    bool isConst,
-    bool isFinal,
+    bool isStatic = false,
+    bool isConst = false,
+    bool isFinal = false,
     DartType type,
     List<Statement> statements,
   }) {
@@ -94,9 +94,9 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
 
   factory FieldElement.accessor({
     @required String name,
-    bool isStatic,
-    bool isConst,
-    bool isFinal,
+    bool isStatic = false,
+    bool isConst = false,
+    bool isFinal = false,
     DartType type,
   }) {
     var fieldElement = FieldElement(
