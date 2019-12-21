@@ -24,7 +24,6 @@ export 'src/element/element.dart';
 export 'src/element/executable_element.dart';
 export 'src/element/export_element.dart';
 export 'src/element/field_element.dart';
-export 'src/element/file_element.dart';
 export 'src/element/function_element.dart';
 export 'src/element/function_typed_element.dart';
 export 'src/element/import_element.dart';
