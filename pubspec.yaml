@@ -8,7 +8,6 @@ environment:
   sdk: '>=2.7.0 <3.0.0'
 
 dependencies:
-  mustache4dart: any
   analyzer: any
   meta: ^1.1.8
 

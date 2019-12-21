@@ -10,7 +10,7 @@ class TemplateUtils {
   }) {
     return list.where((item) => item != null).where((item) => item != "").map((item) {
           if (item is List) {
-            return stringFromList(item);
+            return stringFromList(item, delimiter: delimiter);
           }
           return item;
         }).join(delimiter) +
@@ -76,7 +76,7 @@ class TemplateUtils {
     return wrapTypeArguments(origin, InterfaceType(name: 'Future'));
   }
 
-  static String generateModifiers({
+  static String stringFromModifiers({
     bool isAbstract = false,
     bool isStatic = false,
     bool isFinal = false,

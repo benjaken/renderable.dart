@@ -68,7 +68,7 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
 
   @override
   String render() {
-    String modifierString = TemplateUtils.generateModifiers(isStatic: isStatic);
+    String modifierString = TemplateUtils.stringFromModifiers(isStatic: isStatic);
     String functionModifierString = TemplateUtils.generateFunctionModifiers(
       isAsynchronous: isAsynchronous,
       isGenerator: isGenerator,

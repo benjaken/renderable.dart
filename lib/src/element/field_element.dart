@@ -1,11 +1,9 @@
 import 'package:meta/meta.dart';
-import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/contract/statement.dart';
 import 'package:renderable/src/element/class_member_element.dart';
 import 'package:renderable/src/element/property_accessor_element.dart';
 import 'package:renderable/src/element/property_inclucing_element.dart';
-import 'package:renderable/src/template/class_field_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/util/field_element_utils.dart';
 import 'package:renderable/src/util/property_accessor_element_utils.dart';
@@ -51,7 +49,9 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
   }) {
     this.getter ??= PropertyAccessorElementUtils.createGetterFromField(this);
     this.setter ??= PropertyAccessorElementUtils.createSetterFromField(this);
-    this.type ??= DartType.var_;
+    if (!isFinal) {
+      this.type ??= DartType.var_;
+    }
   }
 
   factory FieldElement.getter({
@@ -122,6 +122,15 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
       ]);
     }
 
-    return mu.render(class_field_element_template, this);
+    return TemplateUtils.stringFromList([
+      TemplateUtils.stringFromModifiers(
+        isStatic: isStatic,
+        isConst: isConst,
+        isFinal: isFinal,
+      ),
+      type,
+      name,
+      if (value != null) ["=", value],
+    ], suffix: ";");
   }
 }
