@@ -1,12 +1,12 @@
 import 'package:meta/meta.dart';
 import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/contract/statement.dart';
 import 'package:renderable/src/element/class_member_element.dart';
 import 'package:renderable/src/element/property_accessor_element.dart';
 import 'package:renderable/src/element/property_inclucing_element.dart';
 import 'package:renderable/src/template/class_field_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
-import 'package:renderable/src/util/element_utils.dart';
 import 'package:renderable/src/util/field_element_utils.dart';
 import 'package:renderable/src/util/property_accessor_element_utils.dart';
 import 'package:renderable/src/util/template_utils.dart';
@@ -60,6 +60,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     bool isConst,
     bool isFinal,
     DartType type,
+    List<Statement> statements,
   }) {
     var fieldElement = FieldElement(
       name: name,
@@ -68,6 +69,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
       isFinal: isFinal,
     );
     FieldElementUtils.convertToGetter(fieldElement);
+    fieldElement.getter.statements = statements;
     return fieldElement;
   }
 
@@ -77,6 +79,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     bool isConst,
     bool isFinal,
     DartType type,
+    List<Statement> statements,
   }) {
     var fieldElement = FieldElement(
       name: name,
@@ -85,6 +88,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
       isFinal: isFinal,
     );
     FieldElementUtils.convertToSetter(fieldElement);
+    fieldElement.setter.statements = statements;
     return fieldElement;
   }
 
@@ -105,26 +109,6 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     return fieldElement;
   }
 
-  _renderGetterTemplate() {
-    return [
-      TemplateUtils.stringFromList(
-        [getter.returnType, 'get', getter.name, "{"],
-        delimiter: " ",
-      ),
-      "}"
-    ];
-  }
-
-  _renderSetterTemplate() {
-    return [
-      TemplateUtils.stringFromList(
-        ["set", setter.name, "(", setter.parameters, ")", "{"],
-        delimiter: " ",
-      ),
-      "}"
-    ];
-  }
-
   @override
   String render() {
     assert(type != null, 'Field type can\'t be null');
@@ -133,12 +117,8 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
 
     if (isSynthetic) {
       return TemplateUtils.stringFromList([
-        // build getter
-        if (getter != null && !getter.isSynthetic)
-          _renderGetterTemplate(),
-        // build setter
-        if (setter != null && !setter.isSynthetic)
-          _renderSetterTemplate(),
+        getter,
+        setter,
       ]);
     }
 

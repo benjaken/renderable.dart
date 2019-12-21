@@ -40,9 +40,6 @@ export 'src/element/type_parameterized_element.dart';
 export 'src/element/uri_referenced_element.dart';
 export 'src/element/variable_element.dart';
 
-/// misc
-export 'src/misc/function_body.dart';
-
 /// statement
 export 'src/statement/addition_statement.dart';
 export 'src/statement/assignment_statement.dart';

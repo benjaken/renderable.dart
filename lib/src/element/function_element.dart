@@ -1,18 +1,16 @@
 import 'package:meta/meta.dart';
 import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/contract/statement.dart';
 import 'package:renderable/src/element/executable_element.dart';
 import 'package:renderable/src/element/local_element.dart';
 import 'package:renderable/src/element/parameter_element.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
-import 'package:renderable/src/misc/function_body.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
 import 'package:renderable/src/util/template_utils.dart';
 
 class FunctionElement extends Renderable implements ExecutableElement, LocalElement {
-  FunctionBody body;
-
   @override
   bool isAbstract;
 
@@ -46,15 +44,19 @@ class FunctionElement extends Renderable implements ExecutableElement, LocalElem
   @override
   List<TypeParameterElement> typeParameters;
 
+  @override
+  List<Statement> statements;
+
   FunctionElement({
     @required this.name,
     this.returnType,
-    this.body,
+    this.statements,
     this.parameters,
     this.isGenerator = false,
     this.isAsynchronous = false,
   }) {
     parameters ??= [];
+    statements ??= [];
   }
 
   @override
@@ -68,7 +70,7 @@ class FunctionElement extends Renderable implements ExecutableElement, LocalElem
 
     return [
       '$returnType $name($parametersString}) $functionModifiersString {',
-      body,
+      statements,
       '}',
     ].join('\n');
   }

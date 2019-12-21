@@ -1,3 +1,5 @@
+import 'package:renderable/renderable.dart';
+import 'package:renderable/src/annotation/internal/renderable_only.dart';
 import 'package:renderable/src/element/function_typed_element.dart';
 
 abstract class ExecutableElement implements FunctionTypedElement {
@@ -15,4 +17,7 @@ abstract class ExecutableElement implements FunctionTypedElement {
 
   /// [true] if this element is a static element. A static element is an element that is not associated with a particular instance, but rather with an entire library or class.
   bool isStatic;
+
+  @renderableOnly
+  List<Statement> statements;
 }

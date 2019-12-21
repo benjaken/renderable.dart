@@ -1,16 +1,13 @@
 import 'package:meta/meta.dart';
-import 'package:mustache4dart/mustache4dart.dart' as mu;
 import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/contract/statement.dart';
 import 'package:renderable/src/element/class_member_element.dart';
 import 'package:renderable/src/element/executable_element.dart';
 import 'package:renderable/src/element/parameter_element.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
-import 'package:renderable/src/misc/function_body.dart';
-import 'package:renderable/src/template/class_method_element_template.dart';
 import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/interface_type.dart';
-import 'package:renderable/src/util/parameter_element_util.dart';
 import 'package:renderable/src/util/string_utils.dart';
 import 'package:renderable/src/util/template_utils.dart';
 
@@ -48,6 +45,9 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
   @override
   bool isSynthetic;
 
+  @override
+  List<Statement> statements;
+
   MethodElement({
     @required this.name,
     this.returnType,
@@ -58,10 +58,12 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
     this.isGenerator = false,
     this.typeParameters,
     this.parameters,
+    this.statements,
   }) {
     returnType ??= InterfaceType(name: 'dynamic');
     typeParameters ??= [];
     parameters ??= [];
+    statements ??= [];
   }
 
   @override
@@ -90,10 +92,12 @@ class MethodElement extends Renderable implements ClassMemberElement, Executable
     if (isAbstract) {
       return StringUtils.append(declarationString, ";");
     }
+
     return TemplateUtils.stringFromList([
       // render declaration
       TemplateUtils.stringFromList([declarationString, "{"], delimiter: " "),
       // render concrete ending token
+      statements,
       "}"
     ]);
   }
