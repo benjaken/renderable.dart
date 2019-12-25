@@ -23,7 +23,8 @@ Renderable's AnalyzerConverter can convert SourceGen code to Renderable code by 
 - [x] Value
 - [ ] Miscellaneous
     - [ ] typedef
-    - [ ] part / part of
+    - [x] part
+    - [ ] part of
 - [ ] Demo
     - [x] class basic info
     - [x] class field

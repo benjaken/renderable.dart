@@ -21,15 +21,15 @@ class DemoGenerator extends GeneratorForAnnotation<Mirror> {
           uri: "dart:collection",
           prefix: "collection",
           combinators: [
-            ShowElementCombinator([
+            ShowElementCombinator(shownNames: [
               "ListQueue",
             ]),
-            ShowElementCombinator([
+            ShowElementCombinator(shownNames: [
               "ListMixin",
               "ListBase",
             ]),
             HideElementCombinator(
-              [
+              hiddenNames: [
                 "MapMixin",
                 "MapBase",
                 "MapView",
@@ -45,15 +45,15 @@ class DemoGenerator extends GeneratorForAnnotation<Mirror> {
         ExportElement(
           uri: "dart:collection",
           combinators: [
-            ShowElementCombinator([
+            ShowElementCombinator(shownNames: [
               "ListQueue",
             ]),
-            ShowElementCombinator([
+            ShowElementCombinator(shownNames: [
               "ListMixin",
               "ListBase",
             ]),
             HideElementCombinator(
-              [
+              hiddenNames: [
                 "MapMixin",
                 "MapBase",
                 "MapView",
