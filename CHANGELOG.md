@@ -1,3 +1,6 @@
+## 0.3.0
+- Redo converter
+
 ## 0.2.0
 - Redesign element
 
