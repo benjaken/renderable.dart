@@ -1,5 +1,6 @@
 import 'package:renderable/src/contract/value.dart';
 
+@deprecated
 class BoolValue extends Value {
   bool value;
 

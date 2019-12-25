@@ -26,7 +26,8 @@
 //  ParameterizedType parseParameterizedType(az.ParameterizedType type) {
 //    return ParameterizedType(
 //      name: type.name,
-//      prefix: AnalyzerImportLoopUp.getPrefix(id, type.element.library.id),
+//      // todo
+//      prefix: null,
 //      typeArguments: type.typeArguments.map(parseDartType).where((e) => e != null).toList(),
 //      typeParameters: type.typeParameters
 //          .map(analyzerElementConverter.parseTypeParameterElement)

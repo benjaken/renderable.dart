@@ -39,8 +39,8 @@ class ImportElement extends Renderable implements UriReferencedElement, Element 
     List<String> hides,
   }) {
     combinators = [
-      if (shows != null) ShowElementCombinator(shows),
-      if (hides != null) HideElementCombinator(hides),
+      if (shows != null) ShowElementCombinator(shownNames: shows),
+      if (hides != null) HideElementCombinator(hiddenNames: hides),
     ];
   }
 

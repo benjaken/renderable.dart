@@ -3,6 +3,7 @@ import 'package:renderable/renderable.dart';
 import 'package:renderable/src/element/namespace_combinator.dart';
 import 'package:renderable/src/element/uri_referenced_element.dart';
 import 'package:renderable/src/util/string_utils.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class ExportElement extends Renderable implements UriReferencedElement, Element {
   List<NamespaceCombinator> combinators;

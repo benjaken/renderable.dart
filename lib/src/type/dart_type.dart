@@ -1,16 +1,22 @@
 import 'package:meta/meta.dart';
 import 'package:renderable/src/contract/renderable.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class DartType extends Renderable {
   String name;
+  String prefix;
 
   DartType({
     @required this.name,
+    this.prefix,
   });
 
   @override
   String render() {
-    return name;
+    return TemplateUtils.stringFromList([
+      if (this.prefix != null) "${this.prefix}.",
+      this.name,
+    ], delimiter: " ");
   }
 
   static final DartType void_ = DartType(name: 'void');

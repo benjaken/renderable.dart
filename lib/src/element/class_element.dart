@@ -1,6 +1,7 @@
 import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/field_element.dart';
 import 'package:renderable/src/element/method_element.dart';
+import 'package:renderable/src/element/property_accessor_element.dart';
 import 'package:renderable/src/element/type_parameter_element.dart';
 import 'package:renderable/src/element/type_parameterized_element.dart';
 import 'package:renderable/src/type/interface_type.dart';
@@ -21,6 +22,9 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
 
   /// method list
   List<MethodElement> methods;
+
+  /// accessor list
+  List<PropertyAccessorElement> accessors;
 
   @override
   String name;

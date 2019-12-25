@@ -6,4 +6,6 @@ abstract class Element implements Renderable {
   bool isSynthetic;
 
 //  List<ElementAnnotation> metadata;
+
+//  String documentationComment;
 }

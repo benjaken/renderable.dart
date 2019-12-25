@@ -86,7 +86,6 @@
 //      returnType: analyzerTypeConverter.parseDartType(method.returnType),
 //      typeParameters: method.typeParameters.map(parseTypeParameterElement).toList(),
 //      parameters: method.parameters.map(parseParameter).toList(),
-//      body: FunctionBody(),
 //    );
 //  }
 //
@@ -97,8 +96,7 @@
 //      isRequired: parameter.isNotOptional,
 //      isNamed: parameter.isNamed,
 //      isOptionalPositional: parameter.isOptionalPositional,
-//      hasRequired: parameter.hasRequired,
-//      defaultValue: parameter.defaultValueCode,
+//      defaultValue: RawValue(parameter.defaultValueCode),
 //      typeParameters: parameter.typeParameters.map(parseTypeParameterElement).toList(),
 ////      parameters: parameter.parameters.map(parseParameter).toList(),
 //    );

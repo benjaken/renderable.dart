@@ -3,6 +3,7 @@ import 'package:renderable/src/contract/renderable.dart';
 import 'package:renderable/src/element/element.dart';
 import 'package:renderable/src/element/export_element.dart';
 import 'package:renderable/src/element/import_element.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class LibraryElement extends Renderable implements Element {
   @override

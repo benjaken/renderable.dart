@@ -64,6 +64,18 @@ class TemplateUtils {
     return templateList.join(', ');
   }
 
+  static String stringFromPrefixed(String prefix, String name) {
+    assert(name != null);
+    if (prefix != null) {
+      return "$prefix.$name";
+    }
+    return name;
+  }
+
+  static String stringFromDartType(DartType type) {
+    return stringFromPrefixed(type.prefix, type.name);
+  }
+
   static InterfaceType wrapTypeArguments(
     InterfaceType origin,
     InterfaceType wrapper,

@@ -7,6 +7,7 @@ import 'package:renderable/src/type/dart_type.dart';
 import 'package:renderable/src/type/function_type.dart';
 import 'package:renderable/src/type/type_parameter_type.dart';
 import 'package:renderable/src/util/parameter_element_util.dart';
+import 'package:renderable/src/util/template_utils.dart';
 
 class ParameterElement extends Renderable implements VariableElement, LocalElement {
   bool isRequired;
@@ -113,20 +114,14 @@ class ParameterElement extends Renderable implements VariableElement, LocalEleme
 
     String defaultValueString = defaultValue == null ? '' : ' = $defaultValue';
 
-    /// for function
-    if (parameters.isNotEmpty) {
-      return '$type $name(${ParameterElementUtil.generateParameter(parameters)})$defaultValueString';
-    }
-
     if (type is FunctionType) {
-      return '${(type as FunctionType).returnType} $name(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})$defaultValueString';
-//      return '${(type as FunctionType).returnType} $name<${(type as FunctionType).typeParameters.join(', ')}>(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})';
+      return '${TemplateUtils.stringFromDartType((type as FunctionType).returnType)} $name(${ParameterElementUtil.generateParameter((type as FunctionType).parameters)})$defaultValueString';
     }
 
     if (type is TypeParameterType) {
-      return '${type.name} $name$defaultValueString';
+      return '${TemplateUtils.stringFromDartType(type)} $name$defaultValueString';
     }
 
-    return '$type $name$defaultValueString';
+    return '${TemplateUtils.stringFromDartType(type)} $name$defaultValueString';
   }
 }
