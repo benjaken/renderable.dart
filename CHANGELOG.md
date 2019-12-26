@@ -1,3 +1,8 @@
+## 0.4.0
+- Separate accessor from fields
+- Fix library keyword generation bug
+- Update demo
+
 ## 0.3.0+1
 - Fix library keyword generation bug
 
