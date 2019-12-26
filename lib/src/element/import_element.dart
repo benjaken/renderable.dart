@@ -48,6 +48,10 @@ class ImportElement extends Renderable implements UriReferencedElement, Element 
   String render() {
     assert(!isDeferred || prefix != null, 'isDeferred can\'t use without prefix');
 
+    if (uri == null) {
+      return null;
+    }
+
     return TemplateUtils.stringFromList(
       [
         "import",

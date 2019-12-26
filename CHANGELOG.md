@@ -1,3 +1,6 @@
+## 0.4.0+1
+- Fix null import and export bug
+
 ## 0.4.0
 - Separate accessor from fields
 - Fix library keyword generation bug

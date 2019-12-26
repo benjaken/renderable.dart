@@ -28,6 +28,10 @@ class ExportElement extends Renderable implements UriReferencedElement, Element 
 
   @override
   String render() {
+    if (uri == null) {
+      return null;
+    }
+
     return TemplateUtils.stringFromList(
       [
         "export",
