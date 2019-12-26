@@ -27,10 +27,10 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
   @override
   DartType type;
 
-  @override
+  @deprecated
   PropertyAccessorElement getter;
 
-  @override
+  @deprecated
   PropertyAccessorElement setter;
 
   @override
@@ -44,69 +44,10 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     this.isSynthetic = false,
     this.type,
     this.value,
-    this.getter,
-    this.setter,
   }) {
-    this.getter ??= PropertyAccessorElementUtils.createGetterFromField(this);
-    this.setter ??= PropertyAccessorElementUtils.createSetterFromField(this);
     if (!isFinal && !isConst) {
       this.type ??= DartType.var_;
     }
-  }
-
-  factory FieldElement.getter({
-    @required String name,
-    bool isStatic = false,
-    bool isConst = false,
-    bool isFinal = false,
-    DartType type,
-    List<Statement> statements,
-  }) {
-    var fieldElement = FieldElement(
-      name: name,
-      isStatic: isStatic,
-      isConst: isConst,
-      isFinal: isFinal,
-    );
-    FieldElementUtils.convertToGetter(fieldElement);
-    fieldElement.getter.statements = statements;
-    return fieldElement;
-  }
-
-  factory FieldElement.setter({
-    @required String name,
-    bool isStatic = false,
-    bool isConst = false,
-    bool isFinal = false,
-    DartType type,
-    List<Statement> statements,
-  }) {
-    var fieldElement = FieldElement(
-      name: name,
-      isStatic: isStatic,
-      isConst: isConst,
-      isFinal: isFinal,
-    );
-    FieldElementUtils.convertToSetter(fieldElement);
-    fieldElement.setter.statements = statements;
-    return fieldElement;
-  }
-
-  factory FieldElement.accessor({
-    @required String name,
-    bool isStatic = false,
-    bool isConst = false,
-    bool isFinal = false,
-    DartType type,
-  }) {
-    var fieldElement = FieldElement(
-      name: name,
-      isStatic: isStatic,
-      isConst: isConst,
-      isFinal: isFinal,
-    );
-    FieldElementUtils.convertToAccessor(fieldElement);
-    return fieldElement;
   }
 
   @override
@@ -115,10 +56,7 @@ class FieldElement extends Renderable implements PropertyInclucingElement, Class
     assert((isConst && isStatic) || (!isConst), 'Only static fields can be declared as const');
 
     if (isSynthetic) {
-      return TemplateUtils.stringFromList([
-        getter,
-        setter,
-      ]);
+      return null;
     }
 
     return TemplateUtils.stringFromList([

@@ -1,3 +1,6 @@
+## 0.3.0+1
+- Fix library keyword generation bug
+
 ## 0.3.0
 - Redo converter
 

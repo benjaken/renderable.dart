@@ -42,12 +42,14 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
     this.interfaces,
     this.fields,
     this.methods,
+    this.accessors,
     this.typeParameters,
     this.isSynthetic = false,
   }) {
     interfaces ??= [];
     fields ??= [];
     methods ??= [];
+    accessors ??= [];
     typeParameters ??= [];
   }
 
@@ -68,6 +70,7 @@ class ClassElement extends Renderable implements TypeParameterizedElement {
       fields,
       // build methods
       methods,
+      accessors,
       "}"
     ]);
   }

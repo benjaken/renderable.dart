@@ -30,7 +30,7 @@ class LibraryElement extends Renderable implements Element {
   @override
   String render() {
     return TemplateUtils.stringFromList([
-      if (name != null) "library $name",
+      if (name != null && name != "") "library $name;",
       imports,
       exports,
       topLevelElements,

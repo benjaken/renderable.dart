@@ -74,6 +74,7 @@ abstract class AnalyzerUtils {
       isAbstract: element.isAbstract,
       fields: element.fields.map(parseFieldElement).toList(),
       methods: element.methods.map(parseMethodElement).toList(),
+      accessors: element.accessors.map(parsePropertyAccessorElement).toList(),
       typeParameters: element.typeParameters.map(parseTypeParameterElement).toList(),
       isSynthetic: element.isSynthetic,
     );
@@ -92,8 +93,6 @@ abstract class AnalyzerUtils {
       isSynthetic: element.isSynthetic,
       type: parseDartType(element.type),
       value: null,
-      getter: parsePropertyAccessorElement(element.getter),
-      setter: parsePropertyAccessorElement(element.setter),
     );
   }
 

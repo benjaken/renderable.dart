@@ -14,8 +14,10 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
 
   bool isSetter;
 
+  @deprecated
   PropertyAccessorElement correspondingGetter;
 
+  @deprecated
   PropertyAccessorElement correspondingSetter;
 
   PropertyInclucingElement variable;
@@ -76,13 +78,47 @@ class PropertyAccessorElement extends Renderable implements ExecutableElement {
     statements ??= [];
   }
 
+  PropertyAccessorElement.getter({
+    @required this.name,
+    this.isStatic = false,
+    this.parameters,
+    this.returnType,
+    this.typeParameters,
+    this.isSynthetic = false,
+    this.statements,
+  }) {
+    this.isGetter = true;
+    this.isSetter = false;
+    parameters ??= [];
+    typeParameters ??= [];
+    statements ??= [];
+  }
+
+  PropertyAccessorElement.setter({
+    @required this.name,
+    this.isStatic = false,
+    this.parameters,
+    this.returnType,
+    this.typeParameters,
+    this.isSynthetic = false,
+    this.statements,
+  }) {
+    this.isGetter = false;
+    this.isSetter = true;
+    parameters ??= [
+      ParameterElement(name: "_$name", type: DartType.dynamic),
+    ];
+    typeParameters ??= [];
+    statements ??= [];
+  }
+
   @override
   String render() {
     assert(!isSetter || !isGetter, 'Accessor can be only one of setter and getter.');
     assert(isSetter || isGetter, 'Accessor must be one of setter and getter.');
 
     if (isSynthetic) {
-      return "";
+      return null;
     }
 
     if (isGetter) {
