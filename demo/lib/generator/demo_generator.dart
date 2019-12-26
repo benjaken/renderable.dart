@@ -70,19 +70,6 @@ class DemoGenerator extends GeneratorForAnnotation<Mirror> {
           ),
           isAbstract: true,
           fields: [
-            FieldElement.setter(
-              name: "setter1",
-              statements: [
-                RawStatement("print(1);"),
-              ],
-            ),
-            FieldElement.getter(
-              name: "getter1",
-              statements: [
-                ReturnStatement(IntValue(1234)),
-              ],
-            ),
-            FieldElement.accessor(name: "accessor1"),
             FieldElement(name: "field1"),
             FieldElement(
               name: "field2",
@@ -150,6 +137,20 @@ class DemoGenerator extends GeneratorForAnnotation<Mirror> {
                   type: DartType.int,
                   defaultValue: IntValue(1234),
                 ),
+              ],
+            ),
+          ],
+          accessors: [
+            PropertyAccessorElement.setter(
+              name: "setter1",
+              statements: [
+                RawStatement("print(1);"),
+              ],
+            ),
+            PropertyAccessorElement.getter(
+              name: "getter1",
+              statements: [
+                ReturnStatement(IntValue(1234)),
               ],
             ),
           ],
